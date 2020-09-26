@@ -1,0 +1,102 @@
+{
+  "ogmoVersion": "3.3.0",
+  "width": 1024,
+  "height": 576,
+  "offsetX": 0,
+  "offsetY": 0,
+  "layers": [
+    {
+      "name": "entities",
+      "_eid": "14123759",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 128,
+      "gridCellsY": 72,
+      "entities": [
+        {"name": "car-porch", "id": 0, "_eid": "14185373", "x": 232, "y": 456, "originX": 58.5, "originY": 30.5}
+      ]
+    },
+    {
+      "name": "walls",
+      "_eid": "14121812",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 128,
+      "gridCellsY": 72,
+      "entities": [
+        {
+          "name": "wall",
+          "id": 0,
+          "_eid": "14214338",
+          "x": 0,
+          "y": 520,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 1032, "y": 520},
+            {"x": 1032, "y": 576},
+            {"x": 0, "y": 576}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 1,
+          "_eid": "14214338",
+          "x": 968,
+          "y": 520,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 968, "y": 8},
+            {"x": 1024, "y": 8},
+            {"x": 1024, "y": 520}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 2,
+          "_eid": "14214338",
+          "x": 16,
+          "y": 520,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 16, "y": 0},
+            {"x": 48, "y": 0},
+            {"x": 48, "y": 520}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 3,
+          "_eid": "14214338",
+          "x": 48,
+          "y": 0,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 968, "y": 0},
+            {"x": 968, "y": 32},
+            {"x": 48, "y": 32}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "decals",
+      "_eid": "14218753",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 128,
+      "gridCellsY": 72,
+      "decals": [],
+      "folder": ""
+    }
+  ]
+}

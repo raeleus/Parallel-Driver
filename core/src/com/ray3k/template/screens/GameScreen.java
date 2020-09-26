@@ -22,10 +22,11 @@ import com.ray3k.template.screens.DialogPause.*;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
 import static com.ray3k.template.Core.*;
+import static com.ray3k.template.Resources.*;
 
 public class GameScreen extends JamScreen {
     public static GameScreen gameScreen;
-    public static final Color BG_COLOR = new Color(Color.WHITE);
+    public static final Color BG_COLOR = new Color(Color.BLACK);
     public Stage stage;
     public static ShapeDrawer shapeDrawer;
     public boolean paused;
@@ -34,7 +35,7 @@ public class GameScreen extends JamScreen {
     private Array<Entity> addEntities;
     
     public GameScreen() {
-        this(null, "test2");
+        this(null, "test-level");
     }
     
     public GameScreen(Array<Entity> addEntities, String levelName) {
@@ -80,7 +81,6 @@ public class GameScreen extends JamScreen {
         Gdx.input.setInputProcessor(inputMultiplexer);
     
         camera = new OrthographicCamera();
-        camera.zoom = .25f;
         viewport = new FitViewport(1024, 576, camera);
     
         entityController.clear();
@@ -92,42 +92,17 @@ public class GameScreen extends JamScreen {
         
         var ogmoReader = new OgmoReader();
         ogmoReader.addListener(new OgmoAdapter() {
-            int levelWidth;
-            int levelHeight;
-        
-            @Override
-            public void level(String ogmoVersion, int width, int height, int offsetX, int offsetY,
-                              ObjectMap<String, OgmoValue> valuesMap) {
-                levelWidth = width;
-                levelHeight = height;
-            }
-        
-            @Override
-            public void grid(int col, int row, int x, int y, int width, int height, int id) {
-                switch (id) {
-                }
-            }
-            
             @Override
             public void entity(String name, int id, int x, int y, int width, int height, boolean flippedX,
                                boolean flippedY, int originX, int originY, int rotation, Array<EntityNode> nodes,
                                ObjectMap<String, OgmoValue> valuesMap) {
                 switch (name) {
-                
+                    case "car-porch":
+                        var player = new PlayerEntity(name);
+                        player.setPosition(x, y);
+                        entityController.add(player);
+                        break;
                 }
-            }
-        
-            @Override
-            public void decal(int centerX, int centerY, float scaleX, float scaleY, int rotation, String texture,
-                              String folder) {
-                var path = folder + "/" + texture;
-                path = path.substring(0, path.length() - 4);
-                if (textureAtlas.findRegion(path) != null) entityController.add(new DecalEntity(path, centerX, centerY));
-            }
-    
-            @Override
-            public void levelComplete() {
-            
             }
         });
         ogmoReader.readFile(Gdx.files.internal("levels/" + levelName + ".json"));
