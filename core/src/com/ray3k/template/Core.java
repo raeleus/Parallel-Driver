@@ -25,7 +25,7 @@ import com.ray3k.template.transitions.*;
 import static com.ray3k.template.Resources.*;
 
 public class Core extends JamGame {
-    public static final String PROJECT_NAME = "Template Game";
+    public static final String PROJECT_NAME = "Parallel Driver";
     public static Core core;
     public static Skin skin;
     public static TextureAtlas textureAtlas;
@@ -36,7 +36,7 @@ public class Core extends JamGame {
     public static CollisionFilter defaultCollisionFilter;
     public static CrossPlatformWorker crossPlatformWorker;
     public enum Binding {
-        LEFT, RIGHT, UP, DOWN, ATTACK;
+        TURN_LEFT, TURN_RIGHT;
     }
     public static float bgm;
     public static float sfx;
@@ -121,10 +121,7 @@ public class Core extends JamGame {
     }
     
     public void setDefaultBindings() {
-        JamScreen.addKeyBinding(Binding.LEFT, Input.Keys.LEFT);
-        JamScreen.addKeyBinding(Binding.RIGHT, Input.Keys.RIGHT);
-        JamScreen.addKeyBinding(Binding.UP, Input.Keys.UP);
-        JamScreen.addKeyBinding(Binding.DOWN, Input.Keys.DOWN);
-        JamScreen.addKeyBinding(Binding.ATTACK, Input.Keys.Z);
+        JamScreen.addKeyBinding(Binding.TURN_LEFT, Input.Keys.LEFT);
+        JamScreen.addKeyBinding(Binding.TURN_RIGHT, Input.Keys.RIGHT);
     }
 }
