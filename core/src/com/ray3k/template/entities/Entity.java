@@ -137,9 +137,14 @@ public abstract class Entity {
         bboxHeight = height;
         this.collisionFilter = collisionFilter;
         
-        item = new Item<>(this);
         collisions = new Collisions();
-        world.add(item, x + bboxX, y + bboxY, width, height);
+        
+        if (item == null) {
+            item = new Item<>(this);
+            world.add(item, x + bboxX, y + bboxY, width, height);
+        } else {
+            world.update(item, x + bboxX, y + bboxY, width, height);
+        }
     }
     
     public boolean isOutside(float left, float bottom, float width, float height, float border) {
