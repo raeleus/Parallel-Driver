@@ -1,0 +1,257 @@
+{
+  "name": "libGDX Jam September 2020",
+  "ogmoVersion": "3.3.0",
+  "levelPaths": ["."],
+  "backgroundColor": "#282c34ff",
+  "gridColor": "#3c4049cc",
+  "anglesRadians": true,
+  "directoryDepth": 5,
+  "layerGridDefaultSize": {"x": 8, "y": 8},
+  "levelDefaultSize": {"x": 320, "y": 240},
+  "levelMinSize": {"x": 128, "y": 128},
+  "levelMaxSize": {"x": 4096, "y": 4096},
+  "levelValues": [],
+  "defaultExportMode": ".json",
+  "compactExport": false,
+  "externalScript": "",
+  "playCommand": "",
+  "entityTags": [],
+  "layers": [
+    {
+      "definition": "grid",
+      "name": "grid layer",
+      "gridSize": {"x": 16, "y": 16},
+      "exportID": "56636810",
+      "arrayMode": 0,
+      "legend": {"0": "#00000000", "1": "#000000ff"}
+    },
+    {
+      "definition": "entity",
+      "name": "entity layer",
+      "gridSize": {"x": 16, "y": 16},
+      "exportID": "56635121",
+      "requiredTags": [],
+      "excludedTags": []
+    },
+    {
+      "definition": "decal",
+      "name": "background",
+      "gridSize": {"x": 16, "y": 16},
+      "exportID": "63438428",
+      "folder": "game",
+      "includeImageSequence": false,
+      "scaleable": false,
+      "rotatable": false,
+      "values": []
+    }
+  ],
+  "entities": [
+    {
+      "exportID": "56653788",
+      "name": "player",
+      "limit": 1,
+      "size": {"x": 16, "y": 16},
+      "origin": {"x": 0, "y": 0},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#3bff00ff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 16, "y": 16},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "canSetColor": false,
+      "hasNodes": true,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": [],
+      "values": [],
+      "texture": "game/player.png",
+      "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAYAAADUryzEAAAACXBIWXMAAAsSAAALEgHS3X78AAAA1UlEQVQ4jaWUAQ2DMBBFX5cJQAIOVglIqAQkVMIkIAEJSOgcMAdIwMEtXSljrCVduOTSBO6/3rU/VSLCmbgeaZVSBtDAICJjssh3kEov8r832SbrMuImCCuBLkLmfwA2iOy7ApoIafa1l8z4Q1hm4AHUcVxXdAaA2c0vC60qHcHvJG2LOIf0/QoZigFaf382JkBKAV3sYJoQa9cOXCmgzpyBLgXcg2gU6CPApGoPrQy3ZeP1Tn8i54Mlnh9L5OLYylqgjiPUxVbe3IRvu09ZOOa59wB4AeUrnvJnH94GAAAAAElFTkSuQmCC"
+    },
+    {
+      "exportID": "63580257",
+      "name": "monster",
+      "limit": -1,
+      "size": {"x": 16, "y": 16},
+      "origin": {"x": 0, "y": 0},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#0009ffff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 16, "y": 16},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "canSetColor": false,
+      "hasNodes": false,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": [],
+      "values": [
+        {
+          "name": "movement",
+          "definition": "Enum",
+          "choices": ["stationary", "east", "west", "north", "south"],
+          "defaults": 0
+        }
+      ],
+      "texture": "game/cow (1).png",
+      "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABc2lDQ1BpY2MAAHhedZE7S8NQGIYfW6Ve6VAHEYcOVRwURME6ah26FClVwduSxl6EJg1JihRXwcWh4CC6eBv8B7oKrgqCoAgiDv4Cb4tI/I4R6qAnnJyH97vky3sgkCrphtM4BIbp2plkIjo3vxANPdFCmAhx4pruWBPpdIp/1/sNDSp4Pah6/Z/3Z6RtOefo0NAs0VHdsl3hceHUqmsp3hTu1IvasvC+8IAtAwpfKD3r86Pigs+viu2ZzCQEVM9o4Rdnf7FetA3J6ZecmFGqyAzfS/1Je86cnZazW3YPDhmSJIiSpcIKJVwG5TTFs7/rxE2pm6IsNbq8LarYUlGgKLUDolaka07OvOg5eUpUle/+CHU/nfzIsD9VewKaHjzvpRdCW/BZ87yPA8/7PITgPZyZ9fqy+DT2JnqtrsX2ILwOJ+d1LbsNpxvQdWdptvb9naDsQD4Pz8fQMQ+RK2hd9L36iXN0CzNrckWXsLMLfZIfXvoCVFVoMel0oGEAAAAJcEhZcwAAD2EAAA9hAag/p2kAAAD0SURBVDhPY2RAA/YmvP/RxWD8g2c+M6LLscAEkDWmpXrjMGMr3HCYYWATQZonTGoFa7p2+RiYfv70M4OkNC8Ge9bsrQwgtQV51QwgQ5hgmp89f8MAwiAAUrR52yG4K0BskBgMgNSBDAHpZYIJdrX3M4AwMQBZHdwLIOeATPT1sgObAXM+zECQl0AA5BqYWrAXQILIoQvSiK4ZZiBMM7IeeCwgOx3Zv8jikNjZ+h/ZQqwG4I5GzBCCByK2wNPStWIAYXwApwHIGvEZgtcFxEQpPG2DohDZ7+gBiS4HC0i8LgApwpaBkF1GXS+g+xlmO7YsDpMDADhud29dhImhAAAAAElFTkSuQmCC"
+    },
+    {
+      "exportID": "64494766",
+      "name": "obstacle",
+      "limit": -1,
+      "size": {"x": 16, "y": 16},
+      "origin": {"x": 0, "y": 0},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#ff0000ff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 16, "y": 16},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "canSetColor": false,
+      "hasNodes": false,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": [],
+      "values": [],
+      "texture": "game/obstacle.png",
+      "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsSAAALEgHS3X78AAABOElEQVQ4jWOgFDC2ZHgmMDAwxGMzx0hdmkGAl5PhyasPCq/ff1VAl3//+fsEFkFeTgVDdWkHdMnzN58y3H/2Dqv7eLjYGVRlRRj2nbljwHLu5lMGQ3VphkPn7zFIivAxfPn2k6Cnbj9+DTYABFiev/0El4AJEgQ3EQqYth29fgDE4OVix6oNm4tArgaBZ68/GjARsowHajA2g37+/isAN+DW49cEDYIZIinCi/ACiACFg5qsKCHHwA2RFOZDNeDFm88ENSMb8hnJO0zIEuehgUMIIAc43ACioxApFkCAhYGBARyNyADdJSAn3378Bpy00QHIAAF0zRIivCgBBQJ2hkpwNijlggA7K/MHsAH3n707wMnBagAzDBSouAIWFN1fvv1iUJQSOnDj4asLhLwLMhAjo8EBAwMDAMxmcA5qbbSGAAAAAElFTkSuQmCC"
+    },
+    {
+      "exportID": "64546986",
+      "name": "telepad",
+      "limit": -1,
+      "size": {"x": 16, "y": 16},
+      "origin": {"x": 0, "y": 0},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#ff0000ff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 16, "y": 16},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "canSetColor": false,
+      "hasNodes": false,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": [],
+      "values": [
+        {
+          "name": "load-level",
+          "definition": "Enum",
+          "choices": ["test2", "test3"],
+          "defaults": 0
+        }
+      ],
+      "texture": "game/telepad.png",
+      "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsSAAALEgHS3X78AAABC0lEQVQ4jcWSPU7EMBSEPxAH8BF8hEgcILR0SbH1JgdAyhFyA2oq9zReGigo0mwBElK4gekokxsYvc0PlpNNuyNZlu03o/G8x8VxtWFAP0HyC4kcPqF/gwPws2l6B8UR2g68j1YDXt7PcdUzNDEpXiJ8C9mC/QJtXGzB1+BNdP8KbmE7LGiFWBTeOecF1hjfKDW/iwvgbhaIrVdZ5mOISJjLJHC9Fka635/2sizJ83wISGu+V2pv1gT6vh+E0hSt9Xw3eT4M27/eA1ThF2qlvLX29AnJwRjjbZBBDWbRwg9woYgb+96MoUUdUAvbO0i+oNuaAWk142SegwzT4zt04mCaPiHeQ7VFvBCAPxJb2OYWBxAWAAAAAElFTkSuQmCC"
+    },
+    {
+      "exportID": "82871882",
+      "name": "switch",
+      "limit": -1,
+      "size": {"x": 16, "y": 16},
+      "origin": {"x": 0, "y": 0},
+      "originAnchored": true,
+      "shape": {
+        "label": "Rectangle",
+        "points": [
+          {"x": -1, "y": -1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": -1},
+          {"x": -1, "y": 1},
+          {"x": 1, "y": 1}
+        ]
+      },
+      "color": "#ff0000ff",
+      "tileX": false,
+      "tileY": false,
+      "tileSize": {"x": 16, "y": 16},
+      "resizeableX": false,
+      "resizeableY": false,
+      "rotatable": false,
+      "rotationDegrees": 360,
+      "canFlipX": false,
+      "canFlipY": false,
+      "canSetColor": false,
+      "hasNodes": false,
+      "nodeLimit": 0,
+      "nodeDisplay": 0,
+      "nodeGhost": true,
+      "tags": [],
+      "values": [
+        {"name": "activated", "definition": "Boolean", "defaults": false}
+      ],
+      "texture": "game/switch-on.png",
+      "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsSAAALEgHS3X78AAAAvUlEQVQ4jcWQuw3CMBRFLwg3LiKkNGnceAKaDMBGGYENGCkr0KQ1GcCRUIq0D8UYkc8FXMGxLMvPvsfWw9/ZkA8I9gCquGsBXOJ8wDILwQmyGmdIOEtAUBOBcMGW+m6k1qZ3W3CA4Dp5uY418gPexM/MMjt2Nc9zlGUJpRT6vscwDGiaJqxLaA+stSE8kmUZiqIIQgYVPMNTRlGyoOu6Vc05RwVvm2iMgdY6FLz3U+kswwQ1ferF8cv5LwFwBzslSKripPpJAAAAAElFTkSuQmCC"
+    }
+  ],
+  "tilesets": []
+}

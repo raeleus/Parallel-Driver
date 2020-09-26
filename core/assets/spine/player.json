@@ -1,0 +1,60 @@
+{
+"skeleton": {
+	"hash": "NJcGtf7JVCtLQtjWDv9GKUjI91w",
+	"spine": "3.8.99",
+	"x": -8,
+	"y": -8.5,
+	"width": 16,
+	"height": 17,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "game/player", "parent": "root", "length": 13.22, "x": 0.2, "y": 0.02 }
+],
+"slots": [
+	{ "name": "game/player", "bone": "game/player", "attachment": "game/player" },
+	{ "name": "bbox", "bone": "root" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/player": {
+				"game/player": { "x": -0.2, "y": -0.02, "width": 16, "height": 17 }
+			}
+		}
+	}
+],
+"animations": {
+	"down": {
+		"bones": {
+			"game/player": {
+				"rotate": [
+					{ "angle": -90 }
+				]
+			}
+		}
+	},
+	"left": {
+		"bones": {
+			"game/player": {
+				"rotate": [
+					{ "angle": 180 }
+				]
+			}
+		}
+	},
+	"right": {},
+	"up": {
+		"bones": {
+			"game/player": {
+				"rotate": [
+					{ "angle": 90 }
+				]
+			}
+		}
+	}
+}
+}

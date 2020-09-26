@@ -1,0 +1,480 @@
+
+textures.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg
+  rotate: false
+  xy: 1, 311
+  size: 186, 196
+  orig: 186, 196
+  offset: 0, 0
+  index: -1
+button-normal
+  rotate: false
+  xy: 189, 470
+  size: 93, 37
+  orig: 93, 37
+  offset: 0, 0
+  index: -1
+button-normal-over
+  rotate: false
+  xy: 189, 431
+  size: 93, 37
+  orig: 93, 37
+  offset: 0, 0
+  index: -1
+button-normal-pressed
+  rotate: false
+  xy: 189, 392
+  size: 93, 37
+  orig: 93, 37
+  offset: 0, 0
+  index: -1
+font
+  rotate: false
+  xy: 1, 248
+  size: 506, 61
+  orig: 506, 61
+  offset: 0, 0
+  index: -1
+knob
+  rotate: false
+  xy: 189, 311
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+logo
+  rotate: false
+  xy: 189, 373
+  size: 171, 17
+  orig: 171, 17
+  offset: 0, 0
+  index: -1
+scroll-pane
+  rotate: false
+  xy: 207, 311
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+slider
+  rotate: false
+  xy: 189, 355
+  size: 100, 16
+  orig: 100, 16
+  offset: 0, 0
+  index: -1
+white
+  rotate: false
+  xy: 213, 352
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+window
+  rotate: false
+  xy: 189, 329
+  size: 22, 24
+  orig: 22, 24
+  offset: 0, 0
+  index: -1
+
+textures2.png
+size: 2048,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+game/bush
+  rotate: false
+  xy: 220, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+game/cow (1)
+  rotate: false
+  xy: 354, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+game/cow (10)
+  rotate: false
+  xy: 372, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+game/cow (11)
+  rotate: false
+  xy: 390, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+game/cow (12)
+  rotate: false
+  xy: 408, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+game/cow (13)
+  rotate: false
+  xy: 426, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+game/cow (14)
+  rotate: false
+  xy: 444, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+game/cow (15)
+  rotate: false
+  xy: 462, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+game/cow (2)
+  rotate: false
+  xy: 480, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+game/cow (3)
+  rotate: false
+  xy: 498, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+game/cow (4)
+  rotate: false
+  xy: 516, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+game/cow (5)
+  rotate: false
+  xy: 534, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+game/cow (6)
+  rotate: false
+  xy: 552, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+game/cow (7)
+  rotate: false
+  xy: 570, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+game/cow (8)
+  rotate: false
+  xy: 588, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+game/cow (9)
+  rotate: false
+  xy: 606, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+game/dirt
+  rotate: false
+  xy: 254, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+game/fence
+  rotate: false
+  xy: 157, 1
+  size: 61, 32
+  orig: 61, 32
+  offset: 0, 0
+  index: -1
+game/grassy
+  rotate: false
+  xy: 322, 5
+  size: 30, 28
+  orig: 32, 32
+  offset: 1, 2
+  index: -1
+game/hanging
+  rotate: false
+  xy: 1, 1
+  size: 88, 32
+  orig: 88, 32
+  offset: 0, 0
+  index: -1
+game/map-test
+  rotate: false
+  xy: 1, 997
+  size: 960, 960
+  orig: 960, 960
+  offset: 0, 0
+  index: -1
+game/map-test2
+  rotate: false
+  xy: 1, 35
+  size: 960, 960
+  orig: 960, 960
+  offset: 0, 0
+  index: -1
+game/monster
+  rotate: false
+  xy: 624, 17
+  size: 16, 16
+  orig: 16, 17
+  offset: 0, 0
+  index: -1
+game/obstacle
+  rotate: false
+  xy: 642, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+game/player
+  rotate: true
+  xy: 696, 21
+  size: 12, 17
+  orig: 16, 17
+  offset: 4, 0
+  index: -1
+game/sunflowerfence
+  rotate: false
+  xy: 91, 1
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
+game/switch-off
+  rotate: true
+  xy: 715, 23
+  size: 10, 14
+  orig: 16, 16
+  offset: 3, 1
+  index: -1
+game/switch-on
+  rotate: true
+  xy: 731, 23
+  size: 10, 14
+  orig: 16, 16
+  offset: 3, 1
+  index: -1
+game/telepad
+  rotate: false
+  xy: 678, 19
+  size: 16, 14
+  orig: 16, 16
+  offset: 0, 1
+  index: -1
+game/tree
+  rotate: false
+  xy: 288, 1
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+game/wall
+  rotate: false
+  xy: 660, 17
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+
+textures3.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+logo/libgdx-b
+  rotate: false
+  xy: 518, 1640
+  size: 39, 51
+  orig: 39, 51
+  offset: 0, 0
+  index: -1
+logo/libgdx-blood
+  rotate: false
+  xy: 563, 1889
+  size: 148, 55
+  orig: 148, 55
+  offset: 0, 0
+  index: -1
+logo/libgdx-d
+  rotate: false
+  xy: 1084, 1709
+  size: 64, 51
+  orig: 64, 51
+  offset: 0, 0
+  index: -1
+logo/libgdx-face
+  rotate: true
+  xy: 1150, 1706
+  size: 54, 59
+  orig: 54, 59
+  offset: 0, 0
+  index: -1
+logo/libgdx-g
+  rotate: false
+  xy: 1015, 1659
+  size: 64, 51
+  orig: 64, 51
+  offset: 0, 0
+  index: -1
+logo/libgdx-i
+  rotate: false
+  xy: 2021, 1836
+  size: 15, 51
+  orig: 15, 51
+  offset: 0, 0
+  index: -1
+logo/libgdx-l
+  rotate: false
+  xy: 2021, 1783
+  size: 15, 51
+  orig: 15, 51
+  offset: 0, 0
+  index: -1
+logo/libgdx-machete
+  rotate: false
+  xy: 2021, 1956
+  size: 24, 91
+  orig: 25, 91
+  offset: 0, 0
+  index: -1
+logo/libgdx-mask
+  rotate: true
+  xy: 1015, 1712
+  size: 48, 67
+  orig: 49, 67
+  offset: 0, 0
+  index: -1
+logo/libgdx-splatter-1
+  rotate: false
+  xy: 2021, 1932
+  size: 23, 22
+  orig: 23, 22
+  offset: 0, 0
+  index: -1
+logo/libgdx-splatter-2
+  rotate: false
+  xy: 2021, 1889
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+logo/libgdx-splatter-3
+  rotate: false
+  xy: 2021, 1911
+  size: 23, 19
+  orig: 23, 19
+  offset: 0, 0
+  index: -1
+logo/libgdx-tears
+  rotate: true
+  xy: 1984, 1416
+  size: 71, 60
+  orig: 71, 60
+  offset: 0, 0
+  index: -1
+logo/libgdx-template
+  rotate: false
+  xy: 712, 1709
+  size: 301, 51
+  orig: 301, 51
+  offset: 0, 0
+  index: -1
+logo/libgdx-x
+  rotate: false
+  xy: 1904, 1436
+  size: 78, 51
+  orig: 78, 51
+  offset: 0, 0
+  index: -1
+logo/ray3k-back
+  rotate: false
+  xy: 1, 1693
+  size: 560, 251
+  orig: 560, 251
+  offset: 0, 0
+  index: -1
+logo/ray3k-bar
+  rotate: true
+  xy: 1904, 1489
+  size: 558, 115
+  orig: 558, 115
+  offset: 0, 0
+  index: -1
+logo/ray3k-border
+  rotate: false
+  xy: 746, 1762
+  size: 592, 285
+  orig: 598, 291
+  offset: 3, 3
+  index: -1
+logo/ray3k-glow
+  rotate: false
+  xy: 1, 1183
+  size: 513, 288
+  orig: 513, 288
+  offset: 0, 0
+  index: -1
+logo/ray3k-matrix
+  rotate: false
+  xy: 563, 1451
+  size: 147, 436
+  orig: 156, 452
+  offset: 4, 12
+  index: -1
+logo/ray3k-text
+  rotate: false
+  xy: 1, 1473
+  size: 515, 218
+  orig: 515, 218
+  offset: 0, 0
+  index: -1
+logo/white
+  rotate: false
+  xy: 2046, 1953
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+logo/zaida-logo
+  rotate: false
+  xy: 1340, 1486
+  size: 562, 561
+  orig: 562, 561
+  offset: 0, 0
+  index: -1
+logo/zaida-name
+  rotate: false
+  xy: 1, 1946
+  size: 743, 101
+  orig: 752, 113
+  offset: 3, 8
+  index: -1
