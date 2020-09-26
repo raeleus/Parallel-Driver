@@ -11,7 +11,7 @@
 						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.Label",
 						"name": "default"
 					},
-					"text": "This game was made by ZaidaZadkiel\\nCopyright ZaidaZadkiel (C) 2020",
+					"text": "This game was made by Raeleus.\\nCopyright Raymond \"Raeleus\" Buckley © 2020\\n\\nMusic by Devynn LaShure, Echo Blue Music\\nhttps://www.echobluemusic.com",
 					"textAlignment": 1,
 					"ellipsis": false,
 					"ellipsisString": "...",
@@ -95,7 +95,7 @@
 			}
 		],
 		"name": null,
-		"background": "bg-10",
+		"background": "window-10",
 		"color": null,
 		"padLeft": 0,
 		"padRight": 0,
@@ -108,7 +108,7 @@
 		"visible": true
 	}
 ],
-"backgroundColor": "black",
+"backgroundColor": null,
 "skinPath": "skin.json",
 "packageString": "com.mygdx.game",
 "classString": "Core"

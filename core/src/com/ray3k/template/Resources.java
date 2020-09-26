@@ -16,33 +16,9 @@ public class Resources {
 
     public static AnimationStateData spine_libgdxAnimationData;
 
-    public static SkeletonData spine_monster;
-
-    public static AnimationStateData spine_monsterAnimationData;
-
-    public static SkeletonData spine_obstacle;
-
-    public static AnimationStateData spine_obstacleAnimationData;
-
-    public static SkeletonData spine_player;
-
-    public static AnimationStateData spine_playerAnimationData;
-
     public static SkeletonData spine_ray3k;
 
     public static AnimationStateData spine_ray3kAnimationData;
-
-    public static SkeletonData spine_switch;
-
-    public static AnimationStateData spine_switchAnimationData;
-
-    public static SkeletonData spine_telepad;
-
-    public static AnimationStateData spine_telepadAnimationData;
-
-    public static SkeletonData spine_wall;
-
-    public static AnimationStateData spine_wallAnimationData;
 
     public static SkeletonData spine_zaida;
 
@@ -80,36 +56,10 @@ public class Resources {
         spine_libgdxAnimationData = assetManager.get("spine/libgdx.json-animation");
         LibgdxAnimation.animation = spine_libgdx.findAnimation("animation");
         LibgdxAnimation.stand = spine_libgdx.findAnimation("stand");
-        spine_monster = assetManager.get("spine/monster.json");
-        spine_monsterAnimationData = assetManager.get("spine/monster.json-animation");
-        MonsterAnimation.down = spine_monster.findAnimation("down");
-        MonsterAnimation.left = spine_monster.findAnimation("left");
-        MonsterAnimation.right = spine_monster.findAnimation("right");
-        MonsterAnimation.stand = spine_monster.findAnimation("stand");
-        MonsterAnimation.up = spine_monster.findAnimation("up");
-        spine_obstacle = assetManager.get("spine/obstacle.json");
-        spine_obstacleAnimationData = assetManager.get("spine/obstacle.json-animation");
-        ObstacleAnimation.animation = spine_obstacle.findAnimation("animation");
-        spine_player = assetManager.get("spine/player.json");
-        spine_playerAnimationData = assetManager.get("spine/player.json-animation");
-        PlayerAnimation.down = spine_player.findAnimation("down");
-        PlayerAnimation.left = spine_player.findAnimation("left");
-        PlayerAnimation.right = spine_player.findAnimation("right");
-        PlayerAnimation.up = spine_player.findAnimation("up");
         spine_ray3k = assetManager.get("spine/ray3k.json");
         spine_ray3kAnimationData = assetManager.get("spine/ray3k.json-animation");
         Ray3kAnimation.animation = spine_ray3k.findAnimation("animation");
         Ray3kAnimation.stand = spine_ray3k.findAnimation("stand");
-        spine_switch = assetManager.get("spine/switch.json");
-        spine_switchAnimationData = assetManager.get("spine/switch.json-animation");
-        SwitchAnimation.off = spine_switch.findAnimation("off");
-        SwitchAnimation.on = spine_switch.findAnimation("on");
-        spine_telepad = assetManager.get("spine/telepad.json");
-        spine_telepadAnimationData = assetManager.get("spine/telepad.json-animation");
-        TelepadAnimation.animation = spine_telepad.findAnimation("animation");
-        spine_wall = assetManager.get("spine/wall.json");
-        spine_wallAnimationData = assetManager.get("spine/wall.json-animation");
-        WallAnimation.animation = spine_wall.findAnimation("animation");
         spine_zaida = assetManager.get("spine/zaida.json");
         spine_zaidaAnimationData = assetManager.get("spine/zaida.json-animation");
         ZaidaAnimation.animation = spine_zaida.findAnimation("animation");
@@ -135,50 +85,10 @@ public class Resources {
         public static Animation stand;
     }
 
-    public static class MonsterAnimation {
-        public static Animation down;
-
-        public static Animation left;
-
-        public static Animation right;
-
-        public static Animation stand;
-
-        public static Animation up;
-    }
-
-    public static class ObstacleAnimation {
-        public static Animation animation;
-    }
-
-    public static class PlayerAnimation {
-        public static Animation down;
-
-        public static Animation left;
-
-        public static Animation right;
-
-        public static Animation up;
-    }
-
     public static class Ray3kAnimation {
         public static Animation animation;
 
         public static Animation stand;
-    }
-
-    public static class SwitchAnimation {
-        public static Animation off;
-
-        public static Animation on;
-    }
-
-    public static class TelepadAnimation {
-        public static Animation animation;
-    }
-
-    public static class WallAnimation {
-        public static Animation animation;
     }
 
     public static class ZaidaAnimation {

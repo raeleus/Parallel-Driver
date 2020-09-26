@@ -70,7 +70,7 @@
 				"spaceBottom": 0,
 				"expandX": false,
 				"expandY": false,
-				"fillX": true,
+				"fillX": false,
 				"fillY": false,
 				"growX": false,
 				"growY": false,
@@ -81,7 +81,7 @@
 				"maxHeight": -1,
 				"preferredWidth": -1,
 				"preferredHeight": -1,
-				"uniformX": true,
+				"uniformX": false,
 				"uniformY": false,
 				"colSpan": 1
 			},
@@ -116,7 +116,7 @@
 				"spaceBottom": 0,
 				"expandX": false,
 				"expandY": false,
-				"fillX": true,
+				"fillX": false,
 				"fillY": false,
 				"growX": false,
 				"growY": false,
@@ -127,7 +127,7 @@
 				"maxHeight": -1,
 				"preferredWidth": -1,
 				"preferredHeight": -1,
-				"uniformX": true,
+				"uniformX": false,
 				"uniformY": false,
 				"colSpan": 1
 			},
@@ -162,7 +162,7 @@
 				"spaceBottom": 0,
 				"expandX": false,
 				"expandY": false,
-				"fillX": true,
+				"fillX": false,
 				"fillY": false,
 				"growX": false,
 				"growY": false,
@@ -173,7 +173,7 @@
 				"maxHeight": -1,
 				"preferredWidth": -1,
 				"preferredHeight": -1,
-				"uniformX": true,
+				"uniformX": false,
 				"uniformY": false,
 				"colSpan": 1
 			},
@@ -185,7 +185,7 @@
 						"clazz": "com.badlogic.gdx.scenes.scene2d.ui.Label",
 						"name": "default"
 					},
-					"text": "Copyright ZaidaZadkiel (C) 2020",
+					"text": "Copyright Raymond \"Raeleus\" Buckley © 2020",
 					"textAlignment": 8,
 					"ellipsis": false,
 					"ellipsisString": "...",
@@ -223,7 +223,7 @@
 			}
 		],
 		"name": null,
-		"background": "bg-10",
+		"background": "window-10",
 		"color": null,
 		"padLeft": 0,
 		"padRight": 0,
@@ -236,7 +236,7 @@
 		"visible": true
 	}
 ],
-"backgroundColor": "black",
+"backgroundColor": null,
 "skinPath": "skin.json",
 "packageString": "com.mygdx.game",
 "classString": "Core"

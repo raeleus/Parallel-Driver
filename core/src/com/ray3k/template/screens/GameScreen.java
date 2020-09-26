@@ -32,7 +32,6 @@ public class GameScreen extends JamScreen {
     private ChainVfxEffect vfxEffect;
     private String levelName;
     private Array<Entity> addEntities;
-    private PlayerEntity player;
     
     public GameScreen() {
         this(null, "test2");
@@ -74,7 +73,7 @@ public class GameScreen extends JamScreen {
             }
         });
     
-        shapeDrawer = new ShapeDrawer(batch, skin.getRegion("white"));
+        shapeDrawer = new ShapeDrawer(batch, skin.getRegion("game/white"));
         shapeDrawer.setPixelSize(.5f);
     
         InputMultiplexer inputMultiplexer = new InputMultiplexer(stage, this);
@@ -87,7 +86,7 @@ public class GameScreen extends JamScreen {
         entityController.clear();
         
         for (var entity : addEntities) {
-            if (entity instanceof PlayerEntity) player = (PlayerEntity) entity;
+
             entityController.add(entity);
         }
         
@@ -106,11 +105,6 @@ public class GameScreen extends JamScreen {
             @Override
             public void grid(int col, int row, int x, int y, int width, int height, int id) {
                 switch (id) {
-                    case 1:
-                        var wallEntity = new WallEntity();
-                        wallEntity.setPosition(x, y);
-                        entityController.add(wallEntity);
-                        break;
                 }
             }
             
@@ -119,58 +113,7 @@ public class GameScreen extends JamScreen {
                                boolean flippedY, int originX, int originY, int rotation, Array<EntityNode> nodes,
                                ObjectMap<String, OgmoValue> valuesMap) {
                 switch (name) {
-                    case "player":
-                        if (player == null) {
-                            player = new PlayerEntity();
-                            player.setPosition(x + 8, y - 8);
-                            entityController.add(player);
-                        }
-                        break;
-                    case "monster":
-                        if (addEntities.size == 0) {
-                            var monsterEntity = new MonsterEntity();
-                            monsterEntity.setPosition(x + 8, y - 8);
-                            entityController.add(monsterEntity);
-                            switch (valuesMap.get("movement").asString()) {
-                                case "east":
-                                    monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 0);
-                                    monsterEntity.animationState.setAnimation(0, MonsterAnimation.right, true);
-                                    break;
-                                case "west":
-                                    monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 180);
-                                    monsterEntity.animationState.setAnimation(0, MonsterAnimation.left, true);
-                                    break;
-                                case "north":
-                                    monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 90);
-                                    monsterEntity.animationState.setAnimation(0, MonsterAnimation.up, true);
-                                    break;
-                                case "south":
-                                    monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 270);
-                                    monsterEntity.animationState.setAnimation(0, MonsterAnimation.down, true);
-                                    break;
-                            }
-                        }
-                        break;
-                    case "obstacle":
-                        var obstacleEntity = new ObstacleEntity();
-                        obstacleEntity.setPosition(x, y - 16);
-                        entityController.add(obstacleEntity);
-                        break;
-                    case "telepad":
-                        var telepadEntity = new TelepadEntity(valuesMap.get("load-level").asString());
-                        telepadEntity.setPosition(x + 8, y - 8);
-                        entityController.add(telepadEntity);
-                        break;
-                    case "switch":
-                        var switchEntity = new SwitchEntity();
-                        switchEntity.setPosition(x + 8, y -8);
-                        entityController.add(switchEntity);
-                        break;
-                    case "goal":
-                        var goalEntity = new GoalEntity();
-                        goalEntity.setPosition(x + 8, y - 8);
-                        entityController.add(goalEntity);
-                        break;
+                
                 }
             }
         
@@ -184,12 +127,7 @@ public class GameScreen extends JamScreen {
     
             @Override
             public void levelComplete() {
-                var cameraEntity = new CameraEntity(viewport, camera, player);
-                cameraEntity.boundaryLeft = 0;
-                cameraEntity.boundaryRight = levelWidth;
-                cameraEntity.boundaryBottom = 0;
-                cameraEntity.boundaryTop = levelHeight;
-                entityController.add(cameraEntity);
+            
             }
         });
         ogmoReader.readFile(Gdx.files.internal("levels/" + levelName + ".json"));
