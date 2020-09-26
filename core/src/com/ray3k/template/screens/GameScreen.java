@@ -98,8 +98,7 @@ public class GameScreen extends JamScreen {
                                ObjectMap<String, OgmoValue> valuesMap) {
                 switch (name) {
                     case "car-porch":
-                        var player = new PlayerEntity(name);
-                        player.setPosition(x, y);
+                        var player = new PlayerEntity(x, y, name);
                         entityController.add(player);
                         break;
                     case "wall":

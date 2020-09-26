@@ -2,21 +2,24 @@ package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Interpolation;
+import com.badlogic.gdx.math.Intersector;
+import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Vector2;
 import com.dongbat.jbump.CollisionFilter;
 import com.dongbat.jbump.Collisions;
-import com.dongbat.jbump.Item;
 import com.dongbat.jbump.Response;
 import com.esotericsoftware.spine.attachments.BoundingBoxAttachment;
+import com.ray3k.template.*;
 
-import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Core.Binding.*;
+import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.*;
 import static com.ray3k.template.screens.GameScreen.*;
 
 public class PlayerEntity extends Entity {
     float rotation;
     
+    boolean checkCollisions;
     float wheelBase = 40;
     float steeringAngle = 15;
     float enginePower = 800;
@@ -36,7 +39,7 @@ public class PlayerEntity extends Entity {
     Vector2 dragForce = new Vector2();
     float steerAngle;
     
-    public PlayerEntity(String name) {
+    public PlayerEntity(float x, float y, String name) {
         switch (name) {
             case "car-dick's-weiner":
                 setSkeletonData(spine_carDicksWeiner, spine_carDicksWeinerAnimationData);
@@ -125,11 +128,11 @@ public class PlayerEntity extends Entity {
             case "car-porch":
                 setSkeletonData(spine_carPorch, spine_carPorchAnimationData);
                 wheelBase = 40;
-                steeringAngle = 15;
-                enginePower = 800;
+                steeringAngle = 25;
+                enginePower = 1600;
                 friction = -.9f;
                 drag = -.0015f;
-                dragTurning = -.0025f;
+                dragTurning = -.0035f;
                 slipSpeed = 400;
                 tractionFast = .1f;
                 tractionSlow = .7f;
@@ -181,16 +184,17 @@ public class PlayerEntity extends Entity {
         float maxY = -Float.MAX_VALUE;
     
         for (int i = 0, j = 1; i < verts.size && j < verts.size; i += 2, j+=2) {
-            float x = verts.get(i);
-            float y = verts.get(j);
+            float xValue = verts.get(i);
+            float yValue = verts.get(j);
         
-            if (x < minX) minX = x;
-            if (x > maxX) maxX = x;
-            if (y < minY) minY = y;
-            if (y > maxY) maxY = y;
+            if (xValue < minX) minX = xValue;
+            if (xValue > maxX) maxX = xValue;
+            if (yValue < minY) minY = yValue;
+            if (yValue > maxY) maxY = yValue;
         }
     
         setCollisionBox(minX, minY, maxX - minX, maxY - minY, PLAYER_COLLISION_FILTER);
+        setPosition(x, y);
     }
     
     @Override
@@ -274,6 +278,10 @@ public class PlayerEntity extends Entity {
     
             shapeDrawer.setColor(Color.PURPLE);
             shapeDrawer.filledRectangle(frontWheel.x - 5f, frontWheel.y - 5f, 10f, 10f);
+            shapeDrawer.setColor(Color.ORANGE);
+            var bbox = (BoundingBoxAttachment) skeleton.findSlot("bbox").getAttachment();
+            polygon1.setVertices(Utils.boundingBoxAttachmentToTriangles(skeletonBounds, bbox));
+            shapeDrawer.polygon(polygon1);
         }
     }
     
@@ -282,9 +290,26 @@ public class PlayerEntity extends Entity {
     
     }
     
+    Polygon polygon1 = new Polygon();
+    Polygon polygon2 = new Polygon();
     @Override
     public void collision(Collisions collisions) {
-    
+        if (checkCollisions) for (int i = 0; i < collisions.size(); i++) {
+            var collision = collisions.get(0);
+            if (collision.other.userData instanceof WallEntity) {
+                var wall = (WallEntity) collision.other.userData;
+                var bbox = (BoundingBoxAttachment) skeleton.findSlot("bbox").getAttachment();
+                var verts = Utils.boundingBoxAttachmentToTriangles(skeletonBounds, bbox);
+                for (int j = 0; j < verts.length; j += 6) {
+                    polygon1.setVertices(new float[]{verts[j], verts[j+1], verts[j+2], verts[j+3], verts[j+4], verts[j+5]});
+                    polygon2.setVertices(new float[]{wall.x + wall.bboxX, wall.y + wall.bboxY, wall.x + wall.bboxX + wall.bboxWidth, wall.y + wall.bboxY, wall.x + wall.bboxX + wall.bboxWidth, wall.y + wall.bboxY + wall.bboxHeight, wall.x + wall.bboxX, wall.bboxY + wall.bboxHeight});
+                    if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
+                        destroy = true;
+                    }
+                }
+            }
+        }
+        checkCollisions = true;
     }
     
     private void updateBbox() {
@@ -297,23 +322,20 @@ public class PlayerEntity extends Entity {
         float maxY = -Float.MAX_VALUE;
     
         for (int i = 0, j = 1; i < verts.size && j < verts.size; i += 2, j+=2) {
-            float x = verts.get(i);
-            float y = verts.get(j);
+            float xValue = verts.get(i);
+            float yValue = verts.get(j);
         
-            if (x < minX) minX = x;
-            if (x > maxX) maxX = x;
-            if (y < minY) minY = y;
-            if (y > maxY) maxY = y;
+            if (xValue < minX) minX = xValue;
+            if (xValue > maxX) maxX = xValue;
+            if (yValue < minY) minY = yValue;
+            if (yValue > maxY) maxY = yValue;
         }
     
         world.update(item, minX, minY, maxX - minX, maxY - minY);
     }
     
-    private final static CollisionFilter PLAYER_COLLISION_FILTER = new CollisionFilter() {
-        @Override
-        public Response filter(Item item, Item other) {
-            if (other.userData instanceof WallEntity) return Response.cross;
-            else return null;
-        }
+    private final static CollisionFilter PLAYER_COLLISION_FILTER = (item, other) -> {
+        if (other.userData instanceof WallEntity) return Response.cross;
+        else return null;
     };
 }

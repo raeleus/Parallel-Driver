@@ -1,7 +1,7 @@
 {
   "ogmoVersion": "3.3.0",
-  "width": 1024,
-  "height": 576,
+  "width": 1736,
+  "height": 1416,
   "offsetX": 0,
   "offsetY": 0,
   "layers": [
@@ -12,10 +12,10 @@
       "offsetY": 0,
       "gridCellWidth": 8,
       "gridCellHeight": 8,
-      "gridCellsX": 128,
-      "gridCellsY": 72,
+      "gridCellsX": 217,
+      "gridCellsY": 177,
       "entities": [
-        {"name": "car-porch", "id": 0, "_eid": "14185373", "x": 232, "y": 456, "originX": 58.5, "originY": 30.5}
+        {"name": "car-porch", "id": 0, "_eid": "14185373", "x": 160, "y": 136, "originX": 58.5, "originY": 30.5}
       ]
     },
     {
@@ -25,49 +25,35 @@
       "offsetY": 0,
       "gridCellWidth": 8,
       "gridCellHeight": 8,
-      "gridCellsX": 128,
-      "gridCellsY": 72,
+      "gridCellsX": 217,
+      "gridCellsY": 177,
       "entities": [
         {
           "name": "wall",
           "id": 0,
           "_eid": "14214338",
-          "x": 0,
-          "y": 520,
+          "x": 40,
+          "y": 336,
           "originX": 20,
           "originY": 20,
           "nodes": [
-            {"x": 1032, "y": 520},
-            {"x": 1032, "y": 576},
-            {"x": 0, "y": 576}
+            {"x": 1072, "y": 336},
+            {"x": 1072, "y": 392},
+            {"x": 40, "y": 392}
           ]
         },
         {
           "name": "wall",
           "id": 1,
           "_eid": "14214338",
-          "x": 968,
-          "y": 520,
+          "x": 1672,
+          "y": 1416,
           "originX": 20,
           "originY": 20,
           "nodes": [
-            {"x": 968, "y": 8},
-            {"x": 1024, "y": 8},
-            {"x": 1024, "y": 520}
-          ]
-        },
-        {
-          "name": "wall",
-          "id": 2,
-          "_eid": "14214338",
-          "x": 16,
-          "y": 520,
-          "originX": 20,
-          "originY": 20,
-          "nodes": [
-            {"x": 16, "y": 0},
-            {"x": 48, "y": 0},
-            {"x": 48, "y": 520}
+            {"x": 1680, "y": -8},
+            {"x": 1728, "y": -8},
+            {"x": 1728, "y": 1416}
           ]
         },
         {
@@ -79,9 +65,51 @@
           "originX": 20,
           "originY": 20,
           "nodes": [
-            {"x": 968, "y": 0},
-            {"x": 968, "y": 32},
+            {"x": 1656, "y": -8},
+            {"x": 1688, "y": 24},
             {"x": 48, "y": 32}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 4,
+          "_eid": "14214338",
+          "x": 0,
+          "y": 1416,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 0, "y": -8},
+            {"x": 48, "y": -8},
+            {"x": 48, "y": 1416}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 5,
+          "_eid": "14214338",
+          "x": 1672,
+          "y": 784,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 448, "y": 784},
+            {"x": 448, "y": 928},
+            {"x": 1672, "y": 928}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 6,
+          "_eid": "14214338",
+          "x": 80,
+          "y": 1416,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 80, "y": 1296},
+            {"x": 1672, "y": 1296},
+            {"x": 1680, "y": 1424}
           ]
         }
       ]
@@ -93,8 +121,8 @@
       "offsetY": 0,
       "gridCellWidth": 8,
       "gridCellHeight": 8,
-      "gridCellsX": 128,
-      "gridCellsY": 72,
+      "gridCellsX": 217,
+      "gridCellsY": 177,
       "decals": [],
       "folder": ""
     }
