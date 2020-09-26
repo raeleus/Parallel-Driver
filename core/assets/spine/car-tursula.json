@@ -1,0 +1,39 @@
+{
+"skeleton": {
+	"hash": "S5erTpAlzGxZk/ce/0OpYCEGl/s",
+	"spine": "3.8.99",
+	"x": -69,
+	"y": -32,
+	"width": 138,
+	"height": 64,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/car-tursula", "bone": "root", "attachment": "game/car-tursula" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -60.89, 27.77, 59.43, 27.3, 60.37, -31.92, -61.36, -30.98 ]
+				}
+			},
+			"game/car-tursula": {
+				"game/car-tursula": { "width": 138, "height": 64 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

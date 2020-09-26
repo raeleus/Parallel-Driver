@@ -219,7 +219,7 @@ public class ListUpdater {
         name = name.replaceAll("^[./]*", "").replaceAll("[\\\\/\\-\\s]", "_").replaceAll("['\"]", "");
         var splits = name.split("_");
         var builder = new StringBuilder(splits[0]);
-        for (int i = 1; i < splits.length - 1; i++) {
+        for (int i = 1; i < splits.length; i++) {
             var split = splits[i];
             builder.append(Character.toUpperCase(split.charAt(0)));
             builder.append(split.substring(1));

@@ -1,0 +1,39 @@
+{
+"skeleton": {
+	"hash": "Efr14MV49eU46UUj8CTJ2qMlTpE",
+	"spine": "3.8.99",
+	"x": -54.5,
+	"y": -29.5,
+	"width": 109,
+	"height": 59,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/car-hoop-tee", "bone": "root", "attachment": "game/car-hoop-tee" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -51.49, 20.82, 49.56, 21.29, 49.56, -28.53, -50.55, -29 ]
+				}
+			},
+			"game/car-hoop-tee": {
+				"game/car-hoop-tee": { "width": 109, "height": 59 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

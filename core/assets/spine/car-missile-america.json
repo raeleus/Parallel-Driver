@@ -1,0 +1,39 @@
+{
+"skeleton": {
+	"hash": "2iYU1UCqOHDRyOk+QCdMsXG67CU",
+	"spine": "3.8.99",
+	"x": -186,
+	"y": -46.5,
+	"width": 372,
+	"height": 93,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/car-missile-america", "bone": "root", "attachment": "game/car-missile-america" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -182.62, 33.88, 184.45, 30.59, 184.45, -36.62, -182.62, -37.09 ]
+				}
+			},
+			"game/car-missile-america": {
+				"game/car-missile-america": { "width": 372, "height": 93 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

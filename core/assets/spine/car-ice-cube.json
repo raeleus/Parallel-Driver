@@ -1,0 +1,39 @@
+{
+"skeleton": {
+	"hash": "VU7G2S1D67z2LoOLyJRDeR/jOxo",
+	"spine": "3.8.99",
+	"x": -44.5,
+	"y": -42,
+	"width": 89,
+	"height": 84,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/car-ice-cube", "bone": "root", "attachment": "game/car-ice-cube" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -31.28, 26.46, 36.87, 26.93, 37.81, -31.82, -31.75, -32.29 ]
+				}
+			},
+			"game/car-ice-cube": {
+				"game/car-ice-cube": { "width": 89, "height": 84 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

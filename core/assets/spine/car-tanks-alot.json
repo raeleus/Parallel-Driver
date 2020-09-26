@@ -1,0 +1,39 @@
+{
+"skeleton": {
+	"hash": "x8olRHHz6aLa/SpyQjTqNHC3Ze4",
+	"spine": "3.8.99",
+	"x": -99.5,
+	"y": -67.5,
+	"width": 199,
+	"height": 135,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/car-tanks-alot", "bone": "root", "attachment": "game/car-tanks-alot" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -98.02, 61.61, 74.47, 61.61, 74.94, -65.76, -98.02, -67.17 ]
+				}
+			},
+			"game/car-tanks-alot": {
+				"game/car-tanks-alot": { "width": 199, "height": 135 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

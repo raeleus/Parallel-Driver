@@ -1,0 +1,39 @@
+{
+"skeleton": {
+	"hash": "eDwWcP83RauyXN2pePMvtsA/9cY",
+	"spine": "3.8.99",
+	"x": -38.5,
+	"y": -16.5,
+	"width": 77,
+	"height": 33,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/car-hardly", "bone": "root", "attachment": "game/car-hardly" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -36.92, 7.19, 36.4, 7.66, 36.87, -6.44, -37.39, -6.44 ]
+				}
+			},
+			"game/car-hardly": {
+				"game/car-hardly": { "width": 77, "height": 33 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

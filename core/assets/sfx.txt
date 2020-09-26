@@ -8,3 +8,5 @@ sfx/logo/libgdx-title.mp3
 sfx/logo/ray3k-tune.mp3
 sfx/logo/ray3k.mp3
 sfx/logo/woosh.mp3
+sfx/title/boom.mp3
+sfx/title/doppler.mp3

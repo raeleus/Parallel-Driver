@@ -1,3 +1,17 @@
+spine/car-dicks-weiner.json
+spine/car-ground-roller.json
+spine/car-hardly.json
+spine/car-hoop-tee.json
+spine/car-ice-cube.json
+spine/car-ladybird.json
+spine/car-missile-america.json
+spine/car-porch.json
+spine/car-stumbler.json
+spine/car-tanks-alot.json
+spine/car-tursula.json
+spine/egg.json
 spine/libgdx.json
 spine/ray3k.json
+spine/stop-sign.json
+spine/title.json
 spine/zaida.json

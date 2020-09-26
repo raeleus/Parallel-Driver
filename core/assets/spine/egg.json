@@ -1,0 +1,31 @@
+{
+"skeleton": {
+	"hash": "FtG1sDFNGOuban7D3wwrQ98w+e4",
+	"spine": "3.8.99",
+	"x": -15.5,
+	"y": -22,
+	"width": 31,
+	"height": 44,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/egg", "bone": "root", "attachment": "game/egg" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/egg": {
+				"game/egg": { "width": 31, "height": 44 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

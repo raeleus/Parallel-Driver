@@ -1,0 +1,31 @@
+{
+"skeleton": {
+	"hash": "SAfBJ4Yj6SjJktLm1w/Ntm0RF3g",
+	"spine": "3.8.99",
+	"x": -17,
+	"y": -18.5,
+	"width": 34,
+	"height": 37,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/stop-sign", "bone": "root", "attachment": "game/stop-sign" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/stop-sign": {
+				"game/stop-sign": { "width": 34, "height": 37 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

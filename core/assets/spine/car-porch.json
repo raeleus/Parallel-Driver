@@ -1,0 +1,39 @@
+{
+"skeleton": {
+	"hash": "xdma/KnTach6tSOGhLCbJ7cxfVU",
+	"spine": "3.8.99",
+	"x": -58.5,
+	"y": -30.5,
+	"width": 117,
+	"height": 61,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/car-porch", "bone": "root", "attachment": "game/car-porch" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -53.84, 23.64, 51.44, 24.58, 52.38, -26.18, -55.25, -27.12 ]
+				}
+			},
+			"game/car-porch": {
+				"game/car-porch": { "width": 117, "height": 61 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}
