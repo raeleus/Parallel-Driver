@@ -102,6 +102,22 @@ public class GameScreen extends JamScreen {
                         player.setPosition(x, y);
                         entityController.add(player);
                         break;
+                    case "wall":
+                        float minX = x;
+                        float minY = y;
+                        float maxX = x;
+                        float maxY = y;
+                        
+                        for (var node : nodes) {
+                            if (node.x < minX) minX = node.x;
+                            if (node.x > maxX) maxX = node.x;
+                            if (node.y < minY) minY = node.y;
+                            if (node.y > maxY) maxY = node.y;
+                        }
+                        
+                        var wall = new WallEntity(minX, minY, maxX - minX, maxY - minY);
+                        entityController.add(wall);
+                        break;
                 }
             }
         });
