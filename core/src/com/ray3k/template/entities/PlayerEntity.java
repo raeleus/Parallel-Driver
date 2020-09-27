@@ -30,7 +30,6 @@ public class PlayerEntity extends Entity {
     
     float rotation;
     
-    boolean checkCollisions;
     float wheelBase = 40;
     float steeringAngle = 15;
     float enginePower = 800;
@@ -213,6 +212,7 @@ public class PlayerEntity extends Entity {
     
         setCollisionBox(minX, minY, maxX - minX, maxY - minY, PLAYER_COLLISION_FILTER);
         setPosition(startX, startY);
+        world.update(item, x, y);
     }
     
     @Override
@@ -313,7 +313,7 @@ public class PlayerEntity extends Entity {
     Polygon polygon2 = new Polygon();
     @Override
     public void collision(Collisions collisions) {
-        if (checkCollisions) for (int i = 0; i < collisions.size(); i++) {
+        for (int i = 0; i < collisions.size(); i++) {
             var collision = collisions.get(0);
             if (collision.other.userData instanceof WallEntity) {
                 var wall = (WallEntity) collision.other.userData;
@@ -323,7 +323,6 @@ public class PlayerEntity extends Entity {
                     polygon1.setVertices(new float[]{verts[j], verts[j+1], verts[j+2], verts[j+3], verts[j+4], verts[j+5]});
                     polygon2.setVertices(new float[]{wall.x + wall.bboxX, wall.y + wall.bboxY, wall.x + wall.bboxX + wall.bboxWidth, wall.y + wall.bboxY, wall.x + wall.bboxX + wall.bboxWidth, wall.y + wall.bboxY + wall.bboxHeight, wall.x + wall.bboxX, wall.bboxY + wall.bboxHeight});
                     if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
-                        destroy = true;
                         core.transition(new GameScreen(null, "test-level", gameScreen.currentId), new TransitionSlide(270, Interpolation.bounce), .5f);
                     }
                 }
@@ -335,17 +334,15 @@ public class PlayerEntity extends Entity {
                     polygon1.setVertices(new float[]{verts[j], verts[j+1], verts[j+2], verts[j+3], verts[j+4], verts[j+5]});
                     polygon2.setVertices(new float[]{exit.x + exit.bboxX, exit.y + exit.bboxY, exit.x + exit.bboxX + exit.bboxWidth, exit.y + exit.bboxY, exit.x + exit.bboxX + exit.bboxWidth, exit.y + exit.bboxY + exit.bboxHeight, exit.x + exit.bboxX, exit.bboxY + exit.bboxHeight});
                     if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
-                        destroy = true;
-                        var aiInput = new AiInput(inputRecorder);
-                        var newPlayer = new PlayerEntity(startX, startY, name);
-                        newPlayer.inputter = aiInput;
+//                        var aiInput = new AiInput(inputRecorder);
+//                        var newPlayer = new PlayerEntity(startX, startY, name);
+//                        newPlayer.inputter = new NullInput();
 //                        gameScreen.addEntities.add(newPlayer);
                         core.transition(new GameScreen(null, "test-level", gameScreen.currentId + 1), new TransitionSlide(270, Interpolation.bounce), .5f);
                     }
                 }
             }
         }
-        checkCollisions = true;
     }
     
     private void updateBbox() {
