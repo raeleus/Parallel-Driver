@@ -351,17 +351,19 @@ public class PlayerEntity extends Entity {
                 for (int j = 0; j < verts.length; j += 6) {
                     polygon1.setVertices(
                             new float[]{verts[j], verts[j + 1], verts[j + 2], verts[j + 3], verts[j + 4], verts[j + 5]});
-                    polygon2.setVertices(
-                            new float[]{verts2[j], verts2[j + 1], verts2[j + 2], verts2[j + 3], verts2[j + 4], verts2[j + 5]});
-                    if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
-                        if (inputter instanceof PlayerInput) {
-                            core.transition(
-                                    new GameScreen(gameScreen.addEntities, "test-level", gameScreen.currentId),
-                                    new TransitionSlide(270, Interpolation.bounce), .5f);
-                        } else {
-                            destroy = true;
+                    for (int k = 0; k < verts2.length; k+=6) {
+                        polygon2.setVertices(
+                                new float[]{verts2[k], verts2[k + 1], verts2[k + 2], verts2[k + 3], verts2[k + 4], verts2[k + 5]});
+                        if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
+                            if (inputter instanceof PlayerInput) {
+                                core.transition(
+                                        new GameScreen(gameScreen.addEntities, "test-level", gameScreen.currentId),
+                                        new TransitionSlide(270, Interpolation.bounce), .5f);
+                            } else {
+                                destroy = true;
+                            }
+                            break Outer;
                         }
-                        break Outer;
                     }
                 }
             } else if (collision.other.userData instanceof ExitEntity) {
