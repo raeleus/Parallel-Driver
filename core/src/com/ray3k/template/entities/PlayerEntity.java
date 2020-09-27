@@ -311,13 +311,14 @@ public class PlayerEntity extends Entity {
     
     @Override
     public void destroy() {
-    
+        
     }
     
     Polygon polygon1 = new Polygon();
     Polygon polygon2 = new Polygon();
     @Override
     public void collision(Collisions collisions) {
+        Outer:
         for (int i = 0; i < collisions.size(); i++) {
             var collision = collisions.get(0);
             if (collision.other.userData instanceof WallEntity) {
@@ -335,7 +336,31 @@ public class PlayerEntity extends Entity {
                         } else {
                             destroy = true;
                         }
-                        break;
+                        break Outer;
+                    }
+                }
+            } else if (collision.other.userData instanceof PlayerEntity) {
+                var otherPlayer = (PlayerEntity) collision.other.userData;
+                if (!otherPlayer.destroy) {
+                    var bbox = (BoundingBoxAttachment) skeleton.findSlot("bbox").getAttachment();
+                    var verts = Utils.boundingBoxAttachmentToTriangles(skeletonBounds, bbox);
+                    bbox = (BoundingBoxAttachment) otherPlayer.skeleton.findSlot("bbox").getAttachment();
+                    var verts2 = Utils.boundingBoxAttachmentToTriangles(otherPlayer.skeletonBounds, bbox);
+                    for (int j = 0; j < verts.length; j += 6) {
+                        polygon1.setVertices(
+                                new float[]{verts[j], verts[j + 1], verts[j + 2], verts[j + 3], verts[j + 4], verts[j + 5]});
+                        polygon2.setVertices(
+                                new float[]{verts2[j], verts2[j + 1], verts2[j + 2], verts2[j + 3], verts2[j + 4], verts2[j + 5]});
+                        if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
+                            if (inputter instanceof PlayerInput) {
+                                core.transition(
+                                        new GameScreen(gameScreen.addEntities, "test-level", gameScreen.currentId),
+                                        new TransitionSlide(270, Interpolation.bounce), .5f);
+                            } else {
+                                destroy = true;
+                            }
+                            break Outer;
+                        }
                     }
                 }
             } else if (collision.other.userData instanceof ExitEntity) {
@@ -357,7 +382,7 @@ public class PlayerEntity extends Entity {
                         } else {
                             destroy = true;
                         }
-                        break;
+                        break Outer;
                     }
                 }
             }
@@ -387,7 +412,7 @@ public class PlayerEntity extends Entity {
     }
     
     private final static CollisionFilter PLAYER_COLLISION_FILTER = (item, other) -> {
-        if (other.userData instanceof WallEntity || other.userData instanceof ExitEntity) return Response.cross;
+        if (other.userData instanceof WallEntity || other.userData instanceof ExitEntity || other.userData instanceof PlayerEntity) return Response.cross;
         else return null;
     };
     

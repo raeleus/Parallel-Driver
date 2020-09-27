@@ -2,7 +2,6 @@ package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
 import com.dongbat.jbump.Collisions;
-import com.ray3k.template.collisions.*;
 
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.collisions.NullCollisionFilter.*;
@@ -33,7 +32,7 @@ public class WallEntity extends Entity {
         var rect = world.getRect(item);
         if (rect != null) {
             shapeDrawer.setColor(Color.RED);
-            shapeDrawer.setDefaultLineWidth(1);
+            shapeDrawer.setDefaultLineWidth(4);
             shapeDrawer.rectangle(rect.x, rect.y, rect.w, rect.h);
         }
     }

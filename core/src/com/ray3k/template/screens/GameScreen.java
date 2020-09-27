@@ -14,6 +14,7 @@ import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.crashinvaders.vfx.effects.ChainVfxEffect;
+import com.dongbat.jbump.World;
 import com.ray3k.template.*;
 import com.ray3k.template.OgmoReader.*;
 import com.ray3k.template.entities.*;
@@ -46,6 +47,7 @@ public class GameScreen extends JamScreen {
     
     @Override
     public void show() {
+        world = new World<>();
         gameScreen = this;
     
         paused = false;
@@ -88,6 +90,7 @@ public class GameScreen extends JamScreen {
         
         for (var entity : addEntities) {
             entity.item = null;
+            entity.destroy = false;
             entityController.add(entity);
         }
         
