@@ -1,0 +1,155 @@
+{
+  "ogmoVersion": "3.3.0",
+  "width": 1464,
+  "height": 1000,
+  "offsetX": 0,
+  "offsetY": 0,
+  "layers": [
+    {
+      "name": "entities",
+      "_eid": "14123759",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 183,
+      "gridCellsY": 125,
+      "entities": [
+        {
+          "name": "car-ice-cube",
+          "id": 0,
+          "_eid": "14178274",
+          "x": 80,
+          "y": 80,
+          "originX": 44.5,
+          "originY": 42,
+          "rotation": 90,
+          "values": {"id": 0}
+        }
+      ]
+    },
+    {
+      "name": "walls",
+      "_eid": "14121812",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 183,
+      "gridCellsY": 125,
+      "entities": [
+        {
+          "name": "wall",
+          "id": 0,
+          "_eid": "14214338",
+          "x": 144,
+          "y": 328,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 144, "y": 0},
+            {"x": 240, "y": 0},
+            {"x": 240, "y": 328}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 1,
+          "_eid": "14214338",
+          "x": 239,
+          "y": 561,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 239, "y": 233},
+            {"x": 904, "y": 232},
+            {"x": 904, "y": 560}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 2,
+          "_eid": "14214338",
+          "x": 904,
+          "y": 328,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 904, "y": 0},
+            {"x": 1000, "y": 0},
+            {"x": 1000, "y": 328}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 3,
+          "_eid": "14214338",
+          "x": 1360,
+          "y": 888,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 1360, "y": 0},
+            {"x": 1448, "y": 0},
+            {"x": 1456, "y": 888}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 4,
+          "_eid": "14214338",
+          "x": 8,
+          "y": 888,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 1456, "y": 888},
+            {"x": 1456, "y": 984},
+            {"x": 8, "y": 976}
+          ]
+        },
+        {
+          "name": "exit",
+          "id": 5,
+          "_eid": "16710961",
+          "x": 1001,
+          "y": 116.5,
+          "originX": 8,
+          "originY": 8,
+          "nodes": [
+            {"x": 1001, "y": -3},
+            {"x": 1361, "y": -1},
+            {"x": 1360, "y": 112}
+          ],
+          "values": {"id": -1}
+        },
+        {
+          "name": "wall",
+          "id": 6,
+          "_eid": "14214338",
+          "x": 405,
+          "y": 560.5,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 405, "y": 720},
+            {"x": 783, "y": 720},
+            {"x": 782, "y": 559}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "decals",
+      "_eid": "14218753",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 183,
+      "gridCellsY": 125,
+      "decals": [],
+      "folder": ""
+    }
+  ]
+}
