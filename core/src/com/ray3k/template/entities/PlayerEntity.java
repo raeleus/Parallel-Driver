@@ -213,6 +213,8 @@ public class PlayerEntity extends Entity {
         setCollisionBox(minX, minY, maxX - minX, maxY - minY, PLAYER_COLLISION_FILTER);
         setPosition(startX, startY);
         world.update(item, x, y);
+        
+        inputter.reset();
     }
     
     @Override
@@ -323,7 +325,12 @@ public class PlayerEntity extends Entity {
                     polygon1.setVertices(new float[]{verts[j], verts[j+1], verts[j+2], verts[j+3], verts[j+4], verts[j+5]});
                     polygon2.setVertices(new float[]{wall.x + wall.bboxX, wall.y + wall.bboxY, wall.x + wall.bboxX + wall.bboxWidth, wall.y + wall.bboxY, wall.x + wall.bboxX + wall.bboxWidth, wall.y + wall.bboxY + wall.bboxHeight, wall.x + wall.bboxX, wall.bboxY + wall.bboxHeight});
                     if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
-                        core.transition(new GameScreen(null, "test-level", gameScreen.currentId), new TransitionSlide(270, Interpolation.bounce), .5f);
+                        if (inputter instanceof PlayerInput) {
+                            core.transition(new GameScreen(null, "test-level", gameScreen.currentId),
+                                    new TransitionSlide(270, Interpolation.bounce), .5f);
+                        } else {
+                            destroy = true;
+                        }
                         break;
                     }
                 }
@@ -335,11 +342,17 @@ public class PlayerEntity extends Entity {
                     polygon1.setVertices(new float[]{verts[j], verts[j+1], verts[j+2], verts[j+3], verts[j+4], verts[j+5]});
                     polygon2.setVertices(new float[]{exit.x + exit.bboxX, exit.y + exit.bboxY, exit.x + exit.bboxX + exit.bboxWidth, exit.y + exit.bboxY, exit.x + exit.bboxX + exit.bboxWidth, exit.y + exit.bboxY + exit.bboxHeight, exit.x + exit.bboxX, exit.bboxY + exit.bboxHeight});
                     if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
-//                        var aiInput = new AiInput(inputRecorder);
-//                        var newPlayer = new PlayerEntity(startX, startY, name);
-//                        newPlayer.inputter = new NullInput();
-//                        gameScreen.addEntities.add(newPlayer);
-                        core.transition(new GameScreen(null, "test-level", gameScreen.currentId + 1), new TransitionSlide(270, Interpolation.bounce), .5f);
+                        if (inputter instanceof PlayerInput) {
+                            var aiInput = new AiInput(inputRecorder);
+                            var newPlayer = new PlayerEntity(startX, startY, name);
+                            newPlayer.inputter = aiInput;
+                            gameScreen.addEntities.add(newPlayer);
+                            core.transition(
+                                    new GameScreen(gameScreen.addEntities, "test-level", gameScreen.currentId + 1),
+                                    new TransitionSlide(270, Interpolation.bounce), .5f);
+                        } else {
+                            destroy = true;
+                        }
                         break;
                     }
                 }
@@ -377,6 +390,7 @@ public class PlayerEntity extends Entity {
     public interface Inputter {
         boolean isBindingPressed(Binding binding);
         void update(float delta);
+        void reset();
     }
     
     public final static class PlayerInput implements Inputter {
@@ -389,6 +403,11 @@ public class PlayerEntity extends Entity {
         public void update(float delta) {
         
         }
+    
+        @Override
+        public void reset() {
+        
+        }
     }
     
     public final static class NullInput implements Inputter {
@@ -399,6 +418,11 @@ public class PlayerEntity extends Entity {
     
         @Override
         public void update(float delta) {
+        
+        }
+    
+        @Override
+        public void reset() {
         
         }
     }
@@ -414,23 +438,23 @@ public class PlayerEntity extends Entity {
         @Override
         public boolean isBindingPressed(Binding binding) {
             if (binding == TURN_LEFT) {
-                if (inputRecorder.leftInputs.size == 0) return false;
-                
-                var inputRecord = inputRecorder.leftInputs.first();
-                if (frame >= inputRecord.frame) {
-                    inputRecorder.leftInputs.removeIndex(0);
-                    return inputRecord.binding != null;
+                InputRecord selectedRecord = null;
+                for (var inputRecord : inputRecorder.leftInputs) {
+                    if (frame > inputRecord.frame) selectedRecord = inputRecord;
+                    else break;
                 }
+                
+                if (selectedRecord != null) return selectedRecord.binding != null;
             }
     
             if (binding == TURN_RIGHT) {
-                if (inputRecorder.rightInputs.size == 0) return false;
-        
-                var inputRecord = inputRecorder.rightInputs.first();
-                if (frame >= inputRecord.frame) {
-                    inputRecorder.rightInputs.removeIndex(0);
-                    return inputRecord.binding != null;
+                InputRecord selectedRecord = null;
+                for (var inputRecord : inputRecorder.rightInputs) {
+                    if (frame > inputRecord.frame) selectedRecord = inputRecord;
+                    else break;
                 }
+    
+                if (selectedRecord != null) return selectedRecord.binding != null;
             }
             return false;
         }
@@ -438,6 +462,11 @@ public class PlayerEntity extends Entity {
         @Override
         public void update(float delta) {
             frame += delta;
+        }
+    
+        @Override
+        public void reset() {
+            frame = 0;
         }
     }
     

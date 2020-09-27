@@ -31,7 +31,7 @@ public class GameScreen extends JamScreen {
     public boolean paused;
     private ChainVfxEffect vfxEffect;
     private String levelName;
-//    public Array<Entity> addEntities;
+    public Array<Entity> addEntities;
     public int currentId;
     
     public GameScreen() {
@@ -39,7 +39,7 @@ public class GameScreen extends JamScreen {
     }
     
     public GameScreen(Array<Entity> addEntities, String levelName, int currentId) {
-//        this.addEntities = addEntities == null ? new Array<>() : new Array<>(addEntities);
+        this.addEntities = addEntities == null ? new Array<>() : new Array<>(addEntities);
         this.levelName = levelName;
         this.currentId = currentId;
     }
@@ -86,10 +86,10 @@ public class GameScreen extends JamScreen {
     
         entityController.clear();
         
-//        for (var entity : addEntities) {
-//
-//            entityController.add(entity);
-//        }
+        for (var entity : addEntities) {
+            entity.item = null;
+            entityController.add(entity);
+        }
         
         var ogmoReader = new OgmoReader();
         ogmoReader.addListener(new OgmoAdapter() {

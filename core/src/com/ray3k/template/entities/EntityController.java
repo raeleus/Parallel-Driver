@@ -87,7 +87,7 @@ public class EntityController implements Disposable {
             if (entity.destroy) {
                 entity.destroy();
                 entities.removeValue(entity, false);
-                if (entity.item != null) world.remove(entity.item);
+                if (entity.item != null && world.hasItem(entity.item)) world.remove(entity.item);
             }
         }
     }
