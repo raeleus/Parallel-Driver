@@ -137,7 +137,21 @@
       ]
     },
     {
-      "name": "decals",
+      "name": "foreground",
+      "_eid": "22007555",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 128,
+      "gridCellsY": 121,
+      "decals": [
+        {"x": 507, "y": 487, "texture": "fg-2.png"}
+      ],
+      "folder": "design\\output\\backgrounds"
+    },
+    {
+      "name": "background",
       "_eid": "14218753",
       "offsetX": 0,
       "offsetY": 0,
@@ -145,8 +159,10 @@
       "gridCellHeight": 8,
       "gridCellsX": 128,
       "gridCellsY": 121,
-      "decals": [],
-      "folder": ""
+      "decals": [
+        {"x": 515, "y": 485.5, "texture": "bg-2.png"}
+      ],
+      "folder": "design\\output\\backgrounds"
     }
   ]
 }
