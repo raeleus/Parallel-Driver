@@ -43,9 +43,9 @@ public class PlayerEntity extends Entity {
         switch (name) {
             case "car-dick's-weiner":
                 setSkeletonData(spine_carDicksWeiner, spine_carDicksWeinerAnimationData);
-                wheelBase = 40;
-                steeringAngle = 15;
-                enginePower = 800;
+                wheelBase = 50;
+                steeringAngle = 25;
+                enginePower = 400;
                 friction = -.9f;
                 drag = -.0015f;
                 dragTurning = -.0025f;
@@ -56,116 +56,116 @@ public class PlayerEntity extends Entity {
             case "car-ground-roller":
                 setSkeletonData(spine_carGroundRoller, spine_carGroundRollerAnimationData);
                 wheelBase = 40;
-                steeringAngle = 15;
-                enginePower = 800;
+                steeringAngle = 18;
+                enginePower = 1000;
                 friction = -.9f;
                 drag = -.0015f;
                 dragTurning = -.0025f;
                 slipSpeed = 400;
-                tractionFast = .1f;
+                tractionFast = .06f;
                 tractionSlow = .7f;
                 break;
             case "car-hardly":
                 setSkeletonData(spine_carHardly, spine_carHardlyAnimationData);
-                wheelBase = 40;
-                steeringAngle = 15;
-                enginePower = 800;
+                wheelBase = 30;
+                steeringAngle = 25;
+                enginePower = 1600;
                 friction = -.9f;
-                drag = -.0015f;
-                dragTurning = -.0025f;
-                slipSpeed = 400;
-                tractionFast = .1f;
-                tractionSlow = .7f;
+                drag = -.0010f;
+                dragTurning = -.0015f;
+                slipSpeed = 200;
+                tractionFast = .025f;
+                tractionSlow = .5f;
                 break;
             case "car-hoop-tee":
                 setSkeletonData(spine_carHoopTee, spine_carHoopTeeAnimationData);
                 wheelBase = 40;
-                steeringAngle = 15;
-                enginePower = 800;
+                steeringAngle = 30;
+                enginePower = 1000;
                 friction = -.9f;
                 drag = -.0015f;
                 dragTurning = -.0025f;
                 slipSpeed = 400;
-                tractionFast = .1f;
-                tractionSlow = .7f;
+                tractionFast = .02f;
+                tractionSlow = .03f;
                 break;
             case "car-ice-cube":
                 setSkeletonData(spine_carIceCube, spine_carIceCubeAnimationData);
                 wheelBase = 40;
-                steeringAngle = 15;
-                enginePower = 800;
+                steeringAngle = 45;
+                enginePower = 1000;
                 friction = -.9f;
                 drag = -.0015f;
-                dragTurning = -.0025f;
+                dragTurning = -.0015f;
                 slipSpeed = 400;
-                tractionFast = .1f;
-                tractionSlow = .7f;
+                tractionFast = .009f;
+                tractionSlow = .009f;
                 break;
             case "car-ladybird":
                 setSkeletonData(spine_carLadybird, spine_carLadybirdAnimationData);
-                wheelBase = 40;
-                steeringAngle = 15;
-                enginePower = 800;
+                wheelBase = 30;
+                steeringAngle = 50;
+                enginePower = 400;
                 friction = -.9f;
                 drag = -.0015f;
                 dragTurning = -.0025f;
-                slipSpeed = 400;
+                slipSpeed = 200;
                 tractionFast = .1f;
-                tractionSlow = .7f;
+                tractionSlow = .3f;
                 break;
             case "car-missile-america":
                 setSkeletonData(spine_carMissileAmerica, spine_carMissileAmericaAnimationData);
-                wheelBase = 40;
-                steeringAngle = 15;
-                enginePower = 800;
+                wheelBase = 120;
+                steeringAngle = 60;
+                enginePower = 300;
                 friction = -.9f;
                 drag = -.0015f;
                 dragTurning = -.0025f;
-                slipSpeed = 400;
+                slipSpeed = 200;
                 tractionFast = .1f;
-                tractionSlow = .7f;
+                tractionSlow = .3f;
                 break;
             case "car-porch":
                 setSkeletonData(spine_carPorch, spine_carPorchAnimationData);
                 wheelBase = 40;
                 steeringAngle = 25;
-                enginePower = 1600;
+                enginePower = 2000;
                 friction = -.9f;
-                drag = -.0015f;
-                dragTurning = -.0035f;
+                drag = -.001f;
+                dragTurning = -.003f;
                 slipSpeed = 400;
-                tractionFast = .1f;
-                tractionSlow = .7f;
+                tractionFast = .03f;
+                tractionSlow = .05f;
                 break;
             case "car-stumbler":
                 setSkeletonData(spine_carStumbler, spine_carStumblerAnimationData);
                 wheelBase = 40;
-                steeringAngle = 15;
-                enginePower = 800;
+                steeringAngle = 25;
+                enginePower = 2500;
                 friction = -.9f;
-                drag = -.0015f;
-                dragTurning = -.0025f;
+                drag = -.001f;
+                dragTurning = -.004f;
                 slipSpeed = 400;
-                tractionFast = .1f;
-                tractionSlow = .7f;
+                tractionFast = .03f;
+                tractionSlow = .04f;
                 break;
             case "car-tanks-alot":
                 setSkeletonData(spine_carTanksAlot, spine_carTanksAlotAnimationData);
                 wheelBase = 40;
-                steeringAngle = 15;
-                enginePower = 800;
+                steeringAngle = 20;
+                enginePower = 300;
                 friction = -.9f;
                 drag = -.0015f;
                 dragTurning = -.0025f;
-                slipSpeed = 400;
+                slipSpeed = 200;
                 tractionFast = .1f;
-                tractionSlow = .7f;
+                tractionSlow = .3f;
                 break;
             case "car-tursula":
                 setSkeletonData(spine_carTursula, spine_carTursulaAnimationData);
                 wheelBase = 40;
-                steeringAngle = 15;
-                enginePower = 800;
+                steeringAngle = 25;
+                enginePower = 1600;
                 friction = -.9f;
                 drag = -.0015f;
                 dragTurning = -.0025f;
@@ -221,7 +221,7 @@ public class PlayerEntity extends Entity {
         
         //physics
         acceleration.set(enginePower, 0);
-        acceleration.rotate(rotation);
+        acceleration.rotate(velocity.angle());
         //friction
         frictionForce.set(velocity).scl(friction);
         dragForce.set(velocity).scl(velocity.len()).scl(turn == 0 ? drag : dragTurning);

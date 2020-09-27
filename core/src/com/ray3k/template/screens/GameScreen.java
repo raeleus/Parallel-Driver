@@ -97,10 +97,6 @@ public class GameScreen extends JamScreen {
                                boolean flippedY, int originX, int originY, int rotation, Array<EntityNode> nodes,
                                ObjectMap<String, OgmoValue> valuesMap) {
                 switch (name) {
-                    case "car-porch":
-                        var player = new PlayerEntity(x, y, name);
-                        entityController.add(player);
-                        break;
                     case "wall":
                         float minX = x;
                         float minY = y;
@@ -116,6 +112,10 @@ public class GameScreen extends JamScreen {
                         
                         var wall = new WallEntity(minX, minY, maxX - minX, maxY - minY);
                         entityController.add(wall);
+                        break;
+                    default:
+                        var player = new PlayerEntity(x, y, name);
+                        entityController.add(player);
                         break;
                 }
             }
