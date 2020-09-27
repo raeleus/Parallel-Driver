@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "M9xiv3/kGJ+hUsO7ieam5fllu+0",
+	"hash": "kGc+YUXwA+6J6Qh8PC3LxDohyiE",
 	"spine": "3.8.99",
 	"x": -44.5,
 	"y": -25.5,
@@ -13,7 +13,7 @@
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "game/car-ladybird", "bone": "root", "attachment": "game/car-ladybird" },
+	{ "name": "game/car-ladybird", "bone": "root", "dark": "000000", "attachment": "game/car-ladybird" },
 	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "skins": [
@@ -34,6 +34,17 @@
 	}
 ],
 "animations": {
-	"animation": {}
+	"animation": {},
+	"flash": {
+		"slots": {
+			"game/car-ladybird": {
+				"twoColor": [
+					{ "light": "ffffffff", "dark": "000000" },
+					{ "time": 0.2667, "light": "ffffffff", "dark": "ffffff" },
+					{ "time": 0.5, "light": "ffffffff", "dark": "000000" }
+				]
+			}
+		}
+	}
 }
 }

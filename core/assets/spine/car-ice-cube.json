@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "VU7G2S1D67z2LoOLyJRDeR/jOxo",
+	"hash": "IVhG6DxgyrN2lwfIz4Fmz5YiMVE",
 	"spine": "3.8.99",
 	"x": -44.5,
 	"y": -42,
@@ -13,7 +13,7 @@
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "game/car-ice-cube", "bone": "root", "attachment": "game/car-ice-cube" },
+	{ "name": "game/car-ice-cube", "bone": "root", "dark": "000000", "attachment": "game/car-ice-cube" },
 	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "skins": [
@@ -34,6 +34,17 @@
 	}
 ],
 "animations": {
-	"animation": {}
+	"animation": {},
+	"flash": {
+		"slots": {
+			"game/car-ice-cube": {
+				"twoColor": [
+					{ "light": "ffffffff", "dark": "000000" },
+					{ "time": 0.2667, "light": "ffffffff", "dark": "ffffff" },
+					{ "time": 0.5, "light": "ffffffff", "dark": "000000" }
+				]
+			}
+		}
+	}
 }
 }

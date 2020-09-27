@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "jr1fYZIL1wh6NUXX69rVkHoOslk",
+	"hash": "OoEKyn0rYo8xz//dLG+Sj33EeT4",
 	"spine": "3.8.99",
 	"x": -84,
 	"y": -35.5,
@@ -13,7 +13,7 @@
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "game/car-dick's-weiner", "bone": "root", "attachment": "game/car-dick's-weiner" },
+	{ "name": "game/car-dick's-weiner", "bone": "root", "dark": "000000", "attachment": "game/car-dick's-weiner" },
 	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "skins": [
@@ -34,6 +34,17 @@
 	}
 ],
 "animations": {
-	"animation": {}
+	"animation": {},
+	"flash": {
+		"slots": {
+			"game/car-dick's-weiner": {
+				"twoColor": [
+					{ "light": "ffffffff", "dark": "000000" },
+					{ "time": 0.2667, "light": "ffffffff", "dark": "ffffff" },
+					{ "time": 0.5, "light": "ffffffff", "dark": "000000" }
+				]
+			}
+		}
+	}
 }
 }

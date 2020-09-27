@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "tizYjlU/LZDbz/RAxoOWLhvvmVU",
+	"hash": "xRcaqhycVUDswa5HXv7QUiSH1cU",
 	"spine": "3.8.99",
 	"x": -66.5,
 	"y": -50,
@@ -13,7 +13,7 @@
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "game/car-stumbler", "bone": "root", "attachment": "game/car-stumbler" },
+	{ "name": "game/car-stumbler", "bone": "root", "dark": "000000", "attachment": "game/car-stumbler" },
 	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "skins": [
@@ -34,6 +34,17 @@
 	}
 ],
 "animations": {
-	"animation": {}
+	"animation": {},
+	"flash": {
+		"slots": {
+			"game/car-stumbler": {
+				"twoColor": [
+					{ "light": "ffffffff", "dark": "000000" },
+					{ "time": 0.2667, "light": "ffffffff", "dark": "ffffff" },
+					{ "time": 0.5, "light": "ffffffff", "dark": "000000" }
+				]
+			}
+		}
+	}
 }
 }

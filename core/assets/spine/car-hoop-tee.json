@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "Efr14MV49eU46UUj8CTJ2qMlTpE",
+	"hash": "AYCtLHumzDlT5leHqG1ZJd23olE",
 	"spine": "3.8.99",
 	"x": -54.5,
 	"y": -29.5,
@@ -13,7 +13,7 @@
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "game/car-hoop-tee", "bone": "root", "attachment": "game/car-hoop-tee" },
+	{ "name": "game/car-hoop-tee", "bone": "root", "dark": "000000", "attachment": "game/car-hoop-tee" },
 	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "skins": [
@@ -34,6 +34,17 @@
 	}
 ],
 "animations": {
-	"animation": {}
+	"animation": {},
+	"flash": {
+		"slots": {
+			"game/car-hoop-tee": {
+				"twoColor": [
+					{ "light": "ffffffff", "dark": "000000" },
+					{ "time": 0.2667, "light": "ffffffff", "dark": "ffffff" },
+					{ "time": 0.5, "light": "ffffffff", "dark": "000000" }
+				]
+			}
+		}
+	}
 }
 }

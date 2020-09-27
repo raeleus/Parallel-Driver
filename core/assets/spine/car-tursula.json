@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "S5erTpAlzGxZk/ce/0OpYCEGl/s",
+	"hash": "wLbFlwKMvL5FR/fdd2iXiUIzSh0",
 	"spine": "3.8.99",
 	"x": -69,
 	"y": -32,
@@ -13,7 +13,7 @@
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "game/car-tursula", "bone": "root", "attachment": "game/car-tursula" },
+	{ "name": "game/car-tursula", "bone": "root", "dark": "000000", "attachment": "game/car-tursula" },
 	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "skins": [
@@ -34,6 +34,17 @@
 	}
 ],
 "animations": {
-	"animation": {}
+	"animation": {},
+	"flash": {
+		"slots": {
+			"game/car-tursula": {
+				"twoColor": [
+					{ "light": "ffffffff", "dark": "000000" },
+					{ "time": 0.2667, "light": "ffffffff", "dark": "ffffff" },
+					{ "time": 0.5, "light": "ffffffff", "dark": "000000" }
+				]
+			}
+		}
+	}
 }
 }

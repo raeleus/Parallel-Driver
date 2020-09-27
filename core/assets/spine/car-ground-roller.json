@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "zo2PK3kOMJT+npKfVCN/7jkGEWw",
+	"hash": "dgjNclhVWTqtd0X70M04R31xS7E",
 	"spine": "3.8.99",
 	"x": -78,
 	"y": -39,
@@ -13,7 +13,7 @@
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "game/car-ground-roller", "bone": "root", "attachment": "game/car-ground-roller" },
+	{ "name": "game/car-ground-roller", "bone": "root", "dark": "000000", "attachment": "game/car-ground-roller" },
 	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "skins": [
@@ -34,6 +34,17 @@
 	}
 ],
 "animations": {
-	"animation": {}
+	"animation": {},
+	"flash": {
+		"slots": {
+			"game/car-ground-roller": {
+				"twoColor": [
+					{ "light": "ffffffff", "dark": "000000" },
+					{ "time": 0.2667, "light": "ffffffff", "dark": "ffffff" },
+					{ "time": 0.5, "light": "ffffffff", "dark": "000000" }
+				]
+			}
+		}
+	}
 }
 }

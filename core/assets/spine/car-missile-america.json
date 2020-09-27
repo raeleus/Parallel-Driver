@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "2iYU1UCqOHDRyOk+QCdMsXG67CU",
+	"hash": "jSC8RZVvmkaFG87JDjIGrK1Y8o8",
 	"spine": "3.8.99",
 	"x": -186,
 	"y": -46.5,
@@ -13,7 +13,7 @@
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "game/car-missile-america", "bone": "root", "attachment": "game/car-missile-america" },
+	{ "name": "game/car-missile-america", "bone": "root", "dark": "000000", "attachment": "game/car-missile-america" },
 	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "skins": [
@@ -34,6 +34,17 @@
 	}
 ],
 "animations": {
-	"animation": {}
+	"animation": {},
+	"flash": {
+		"slots": {
+			"game/car-missile-america": {
+				"twoColor": [
+					{ "light": "ffffffff", "dark": "000000" },
+					{ "time": 0.2667, "light": "ffffffff", "dark": "ffffff" },
+					{ "time": 0.5, "light": "ffffffff", "dark": "000000" }
+				]
+			}
+		}
+	}
 }
 }

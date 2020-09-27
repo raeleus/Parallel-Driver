@@ -195,6 +195,10 @@ public class PlayerEntity extends Entity {
                 tractionSlow = .7f;
                 break;
         }
+        
+        if (inputter instanceof PlayerInput) {
+            animationState.setAnimation(0, "flash", false);
+        }
     
         var bbox = (BoundingBoxAttachment) skeleton.findSlot("bbox").getAttachment();
         var verts = skeletonBounds.getPolygon(bbox);

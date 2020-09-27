@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "x8olRHHz6aLa/SpyQjTqNHC3Ze4",
+	"hash": "cCwb8Ob7YSl4Z49QkPDmX8Q07BU",
 	"spine": "3.8.99",
 	"x": -99.5,
 	"y": -67.5,
@@ -13,7 +13,7 @@
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "game/car-tanks-alot", "bone": "root", "attachment": "game/car-tanks-alot" },
+	{ "name": "game/car-tanks-alot", "bone": "root", "dark": "000000", "attachment": "game/car-tanks-alot" },
 	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "skins": [
@@ -34,6 +34,17 @@
 	}
 ],
 "animations": {
-	"animation": {}
+	"animation": {},
+	"flash": {
+		"slots": {
+			"game/car-tanks-alot": {
+				"twoColor": [
+					{ "light": "ffffffff", "dark": "000000" },
+					{ "time": 0.2667, "light": "ffffffff", "dark": "ffffff" },
+					{ "time": 0.5, "light": "ffffffff", "dark": "000000" }
+				]
+			}
+		}
+	}
 }
 }
