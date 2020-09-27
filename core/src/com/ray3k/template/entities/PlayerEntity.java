@@ -161,7 +161,7 @@ public class PlayerEntity extends Entity {
             case "car-stumbler":
                 setSkeletonData(spine_carStumbler, spine_carStumblerAnimationData);
                 wheelBase = 40;
-                steeringAngle = 25;
+                steeringAngle = 20;
                 enginePower = 2500;
                 friction = -.9f;
                 drag = -.001f;
@@ -371,14 +371,14 @@ public class PlayerEntity extends Entity {
             } else if (collision.other.userData instanceof ExitEntity) {
                 var exit = (ExitEntity) collision.other.userData;
                 if (exit.id == -1 || exit.id == id) {
-                    var bbox = (BoundingBoxAttachment) skeleton.findSlot("bbox").getAttachment();
-                    var verts = Utils.boundingBoxAttachmentToTriangles(skeletonBounds, bbox);
-                    for (int j = 0; j < verts.length; j += 6) {
-                        polygon1.setVertices(
-                                new float[]{verts[j], verts[j + 1], verts[j + 2], verts[j + 3], verts[j + 4], verts[j + 5]});
-                        polygon2.setVertices(
-                                new float[]{exit.x + exit.bboxX, exit.y + exit.bboxY, exit.x + exit.bboxX + exit.bboxWidth, exit.y + exit.bboxY, exit.x + exit.bboxX + exit.bboxWidth, exit.y + exit.bboxY + exit.bboxHeight, exit.x + exit.bboxX, exit.bboxY + exit.bboxHeight});
-                        if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
+//                    var bbox = (BoundingBoxAttachment) skeleton.findSlot("bbox").getAttachment();
+//                    var verts = Utils.boundingBoxAttachmentToTriangles(skeletonBounds, bbox);
+//                    for (int j = 0; j < verts.length; j += 6) {
+//                        polygon1.setVertices(
+//                                new float[]{verts[j], verts[j + 1], verts[j + 2], verts[j + 3], verts[j + 4], verts[j + 5]});
+//                        polygon2.setVertices(
+//                                new float[]{exit.x + exit.bboxX, exit.y + exit.bboxY, exit.x + exit.bboxX + exit.bboxWidth, exit.y + exit.bboxY, exit.x + exit.bboxX + exit.bboxWidth, exit.y + exit.bboxY + exit.bboxHeight, exit.x + exit.bboxX, exit.bboxY + exit.bboxHeight});
+//                        if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
                             if (inputter instanceof PlayerInput) {
                                 var aiInput = new AiInput(inputRecorder);
                                 var newPlayer = new PlayerEntity(startX, startY, startRotation, name, id);
@@ -392,8 +392,8 @@ public class PlayerEntity extends Entity {
                                 destroy = true;
                             }
                             break Outer;
-                        }
-                    }
+//                        }
+//                    }
                 }
             }
         }

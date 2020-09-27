@@ -1,0 +1,271 @@
+{
+  "ogmoVersion": "3.3.0",
+  "width": 2720,
+  "height": 576,
+  "offsetX": 0,
+  "offsetY": 0,
+  "layers": [
+    {
+      "name": "entities",
+      "_eid": "14123759",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 340,
+      "gridCellsY": 72,
+      "entities": [
+        {
+          "name": "car-ground-roller",
+          "id": 0,
+          "_eid": "14136955",
+          "x": 168,
+          "y": 496,
+          "originX": 78,
+          "originY": 39,
+          "rotation": 0,
+          "values": {"id": 0}
+        },
+        {
+          "name": "car-hoop-tee",
+          "id": 1,
+          "_eid": "14160372",
+          "x": 2600,
+          "y": 80,
+          "originX": 54.5,
+          "originY": 29.5,
+          "rotation": 181,
+          "values": {"id": 1}
+        },
+        {
+          "name": "car-ladybird",
+          "id": 2,
+          "_eid": "14174336",
+          "x": 160,
+          "y": 88,
+          "originX": 44.5,
+          "originY": 25.5,
+          "rotation": 0,
+          "values": {"id": 2}
+        },
+        {
+          "name": "car-porch",
+          "id": 3,
+          "_eid": "14185373",
+          "x": 2589,
+          "y": 482,
+          "originX": 58.5,
+          "originY": 30.5,
+          "rotation": -179,
+          "values": {"id": 3}
+        },
+        {
+          "name": "car-hardly",
+          "id": 4,
+          "_eid": "14154244",
+          "x": 160,
+          "y": 288,
+          "originX": 38.5,
+          "originY": 16.5,
+          "rotation": 0,
+          "values": {"id": 4}
+        },
+        {
+          "name": "car-stumbler",
+          "id": 7,
+          "_eid": "14195004",
+          "x": 2564.249826415349,
+          "y": 274.089120899592,
+          "originX": 66.5,
+          "originY": 50,
+          "rotation": -180,
+          "values": {"id": 5}
+        }
+      ]
+    },
+    {
+      "name": "walls",
+      "_eid": "14121812",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 340,
+      "gridCellsY": 72,
+      "entities": [
+        {
+          "name": "wall",
+          "id": 0,
+          "_eid": "14214338",
+          "x": 0,
+          "y": 576,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 2720, "y": 576},
+            {"x": 2720, "y": 552},
+            {"x": 0, "y": 552}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 1,
+          "_eid": "14214338",
+          "x": 0,
+          "y": 0,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 32, "y": 0},
+            {"x": 32, "y": 552},
+            {"x": 0, "y": 552}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 2,
+          "_eid": "14214338",
+          "x": 32,
+          "y": -8,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 2720, "y": 0},
+            {"x": 2720, "y": 24},
+            {"x": 24, "y": 24}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 3,
+          "_eid": "14214338",
+          "x": 2696,
+          "y": 24,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 2696, "y": 552},
+            {"x": 2720, "y": 560},
+            {"x": 2720, "y": 24}
+          ]
+        },
+        {
+          "name": "exit",
+          "id": 4,
+          "_eid": "16710961",
+          "x": 161,
+          "y": 552,
+          "originX": 8,
+          "originY": 8,
+          "nodes": [
+            {"x": 161, "y": 24},
+            {"x": 216, "y": 24},
+            {"x": 214, "y": 554}
+          ],
+          "values": {"id": 1}
+        },
+        {
+          "name": "exit",
+          "id": 5,
+          "_eid": "16710961",
+          "x": 280,
+          "y": 552,
+          "originX": 8,
+          "originY": 8,
+          "nodes": [
+            {"x": 280, "y": 24},
+            {"x": 332, "y": 25},
+            {"x": 329, "y": 552}
+          ],
+          "values": {"id": 3}
+        },
+        {
+          "name": "exit",
+          "id": 6,
+          "_eid": "16710961",
+          "x": 88,
+          "y": 560,
+          "originX": 8,
+          "originY": 8,
+          "nodes": [
+            {"x": 88, "y": 24},
+            {"x": 120, "y": 23},
+            {"x": 118, "y": 560}
+          ],
+          "values": {"id": 5}
+        },
+        {
+          "name": "exit",
+          "id": 7,
+          "_eid": "16710961",
+          "x": 2600,
+          "y": 560,
+          "originX": 8,
+          "originY": 8,
+          "nodes": [
+            {"x": 2600, "y": 24},
+            {"x": 2648, "y": 24},
+            {"x": 2656, "y": 560}
+          ],
+          "values": {"id": 0}
+        },
+        {
+          "name": "exit",
+          "id": 8,
+          "_eid": "16710961",
+          "x": 2504,
+          "y": 552,
+          "originX": 8,
+          "originY": 8,
+          "nodes": [
+            {"x": 2504, "y": 24},
+            {"x": 2568, "y": 24},
+            {"x": 2560, "y": 552}
+          ],
+          "values": {"id": 2}
+        },
+        {
+          "name": "exit",
+          "id": 9,
+          "_eid": "16710961",
+          "x": 2400,
+          "y": 552,
+          "originX": 8,
+          "originY": 8,
+          "nodes": [
+            {"x": 2408, "y": 24},
+            {"x": 2456, "y": 24},
+            {"x": 2456, "y": 552}
+          ],
+          "values": {"id": 4}
+        },
+        {
+          "name": "wall",
+          "id": 10,
+          "_eid": "14214338",
+          "x": 1233.3778895493572,
+          "y": 413.16719165438883,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 1234, "y": 170},
+            {"x": 1523, "y": 169},
+            {"x": 1523, "y": 413}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "decals",
+      "_eid": "14218753",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 340,
+      "gridCellsY": 72,
+      "decals": [],
+      "folder": ""
+    }
+  ]
+}

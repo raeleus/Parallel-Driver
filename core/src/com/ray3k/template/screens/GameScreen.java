@@ -39,10 +39,10 @@ public class GameScreen extends JamScreen {
     public int levelId;
     public Array<PlayerEntity> playerEntities = new Array<>();
     public boolean endGame = true;
-    public static final int LAST_LEVEL = 3;
+    public static final int LAST_LEVEL = 5;
     
     public GameScreen() {
-        this(null, 1, 0);
+        this(null, 5, 0);
     }
     
     public GameScreen(Array<Entity> addEntities, int levelId, int currentId) {
