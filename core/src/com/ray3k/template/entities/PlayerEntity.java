@@ -1,5 +1,6 @@
 package com.ray3k.template.entities;
 
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.Intersector;
@@ -22,6 +23,10 @@ import static com.ray3k.template.screens.GameScreen.*;
 public class PlayerEntity extends Entity {
     public Inputter inputter;
     public InputRecorder inputRecorder;
+    
+    public float startX;
+    public float startY;
+    public String name;
     
     float rotation;
     
@@ -46,6 +51,13 @@ public class PlayerEntity extends Entity {
     float steerAngle;
     
     public PlayerEntity(float x, float y, String name) {
+        startX = x;
+        startY = y;
+        this.name = name;
+    }
+    
+    @Override
+    public void create() {
         switch (name) {
             case "car-dick's-weiner":
                 setSkeletonData(spine_carDicksWeiner, spine_carDicksWeinerAnimationData);
@@ -200,12 +212,7 @@ public class PlayerEntity extends Entity {
         }
     
         setCollisionBox(minX, minY, maxX - minX, maxY - minY, PLAYER_COLLISION_FILTER);
-        setPosition(x, y);
-    }
-    
-    @Override
-    public void create() {
-    
+        setPosition(startX, startY);
     }
     
     @Override
@@ -221,6 +228,7 @@ public class PlayerEntity extends Entity {
         }
         
         //input
+        inputter.update(delta);
         int turn = 0;
         if (inputter.isBindingPressed(TURN_RIGHT)) {
             turn -= 1;
@@ -317,7 +325,6 @@ public class PlayerEntity extends Entity {
                     if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
                         destroy = true;
                         core.transition(new GameScreen(null, "test-level", gameScreen.currentId), new TransitionSlide(270, Interpolation.bounce), .5f);
-                        System.out.println(inputRecorder);
                     }
                 }
             } else if (collision.other.userData instanceof ExitEntity) {
@@ -329,6 +336,10 @@ public class PlayerEntity extends Entity {
                     polygon2.setVertices(new float[]{exit.x + exit.bboxX, exit.y + exit.bboxY, exit.x + exit.bboxX + exit.bboxWidth, exit.y + exit.bboxY, exit.x + exit.bboxX + exit.bboxWidth, exit.y + exit.bboxY + exit.bboxHeight, exit.x + exit.bboxX, exit.bboxY + exit.bboxHeight});
                     if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
                         destroy = true;
+                        var aiInput = new AiInput(inputRecorder);
+                        var newPlayer = new PlayerEntity(startX, startY, name);
+                        newPlayer.inputter = aiInput;
+//                        gameScreen.addEntities.add(newPlayer);
                         core.transition(new GameScreen(null, "test-level", gameScreen.currentId + 1), new TransitionSlide(270, Interpolation.bounce), .5f);
                     }
                 }
@@ -366,12 +377,68 @@ public class PlayerEntity extends Entity {
     
     public interface Inputter {
         boolean isBindingPressed(Binding binding);
+        void update(float delta);
     }
     
     public final static class PlayerInput implements Inputter {
         @Override
         public boolean isBindingPressed(Binding binding) {
             return gameScreen.isBindingPressed(binding);
+        }
+    
+        @Override
+        public void update(float delta) {
+        
+        }
+    }
+    
+    public final static class NullInput implements Inputter {
+        @Override
+        public boolean isBindingPressed(Binding binding) {
+            return false;
+        }
+    
+        @Override
+        public void update(float delta) {
+        
+        }
+    }
+    
+    public final static class AiInput implements  Inputter {
+        public float frame;
+        public InputRecorder inputRecorder;
+    
+        public AiInput(InputRecorder inputRecorder) {
+            this.inputRecorder = inputRecorder;
+        }
+    
+        @Override
+        public boolean isBindingPressed(Binding binding) {
+            if (binding == TURN_LEFT) {
+                if (inputRecorder.leftInputs.size == 0) return false;
+                
+                var inputRecord = inputRecorder.leftInputs.first();
+                if (frame >= inputRecord.frame) {
+                    inputRecorder.leftInputs.removeIndex(0);
+                    return inputRecord.binding != null;
+                }
+            }
+    
+            if (binding == TURN_RIGHT) {
+                if (inputRecorder.rightInputs.size == 0) return false;
+        
+                var inputRecord = inputRecorder.rightInputs.first();
+                if (frame >= inputRecord.frame) {
+                    inputRecorder.rightInputs.removeIndex(0);
+                    return inputRecord.binding != null;
+                }
+            }
+            return false;
+        }
+    
+        @Override
+        public void update(float delta) {
+            frame += delta;
         }
     }
     
