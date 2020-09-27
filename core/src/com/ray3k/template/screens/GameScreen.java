@@ -188,8 +188,8 @@ public class GameScreen extends JamScreen {
             public void level(String ogmoVersion, int width, int height, int offsetX, int offsetY,
                               ObjectMap<String, OgmoValue> valuesMap) {
                 camera.position.set(width / 2f, height / 2f, 0);
-                float widthRatio = (float) width / Gdx.graphics.getWidth();
-                float heightRatio = (float) height / Gdx.graphics.getHeight();
+                float widthRatio = (float) width / viewport.getWorldWidth();
+                float heightRatio = (float) height / viewport.getWorldHeight();
                 camera.zoom = Math.max(widthRatio, heightRatio);
             }
     
