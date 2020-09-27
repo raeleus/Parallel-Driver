@@ -26,6 +26,7 @@ public class PlayerEntity extends Entity {
     
     public float startX;
     public float startY;
+    public float startRotation;
     public String name;
     
     float rotation;
@@ -49,9 +50,10 @@ public class PlayerEntity extends Entity {
     Vector2 dragForce = new Vector2();
     float steerAngle;
     
-    public PlayerEntity(float x, float y, String name) {
+    public PlayerEntity(float x, float y, float rotation, String name) {
         startX = x;
         startY = y;
+        startRotation = rotation;
         this.name = name;
     }
     
@@ -212,10 +214,11 @@ public class PlayerEntity extends Entity {
     
         setCollisionBox(minX, minY, maxX - minX, maxY - minY, PLAYER_COLLISION_FILTER);
         setPosition(startX, startY);
-        rotation = 0;
+        rotation = startRotation;
         deltaX = 0;
         deltaY = 0;
-        velocity.set(0, 0);
+        velocity.set(.001f, 0);
+        velocity.rotate(rotation);
         acceleration.set(0, 0);
         world.update(item, x, y);
         
@@ -311,7 +314,7 @@ public class PlayerEntity extends Entity {
     
     @Override
     public void destroy() {
-        
+    
     }
     
     Polygon polygon1 = new Polygon();
@@ -341,26 +344,24 @@ public class PlayerEntity extends Entity {
                 }
             } else if (collision.other.userData instanceof PlayerEntity) {
                 var otherPlayer = (PlayerEntity) collision.other.userData;
-                if (!otherPlayer.destroy) {
-                    var bbox = (BoundingBoxAttachment) skeleton.findSlot("bbox").getAttachment();
-                    var verts = Utils.boundingBoxAttachmentToTriangles(skeletonBounds, bbox);
-                    bbox = (BoundingBoxAttachment) otherPlayer.skeleton.findSlot("bbox").getAttachment();
-                    var verts2 = Utils.boundingBoxAttachmentToTriangles(otherPlayer.skeletonBounds, bbox);
-                    for (int j = 0; j < verts.length; j += 6) {
-                        polygon1.setVertices(
-                                new float[]{verts[j], verts[j + 1], verts[j + 2], verts[j + 3], verts[j + 4], verts[j + 5]});
-                        polygon2.setVertices(
-                                new float[]{verts2[j], verts2[j + 1], verts2[j + 2], verts2[j + 3], verts2[j + 4], verts2[j + 5]});
-                        if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
-                            if (inputter instanceof PlayerInput) {
-                                core.transition(
-                                        new GameScreen(gameScreen.addEntities, "test-level", gameScreen.currentId),
-                                        new TransitionSlide(270, Interpolation.bounce), .5f);
-                            } else {
-                                destroy = true;
-                            }
-                            break Outer;
+                var bbox = (BoundingBoxAttachment) skeleton.findSlot("bbox").getAttachment();
+                var verts = Utils.boundingBoxAttachmentToTriangles(skeletonBounds, bbox);
+                bbox = (BoundingBoxAttachment) otherPlayer.skeleton.findSlot("bbox").getAttachment();
+                var verts2 = Utils.boundingBoxAttachmentToTriangles(otherPlayer.skeletonBounds, bbox);
+                for (int j = 0; j < verts.length; j += 6) {
+                    polygon1.setVertices(
+                            new float[]{verts[j], verts[j + 1], verts[j + 2], verts[j + 3], verts[j + 4], verts[j + 5]});
+                    polygon2.setVertices(
+                            new float[]{verts2[j], verts2[j + 1], verts2[j + 2], verts2[j + 3], verts2[j + 4], verts2[j + 5]});
+                    if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
+                        if (inputter instanceof PlayerInput) {
+                            core.transition(
+                                    new GameScreen(gameScreen.addEntities, "test-level", gameScreen.currentId),
+                                    new TransitionSlide(270, Interpolation.bounce), .5f);
+                        } else {
+                            destroy = true;
                         }
+                        break Outer;
                     }
                 }
             } else if (collision.other.userData instanceof ExitEntity) {
@@ -373,7 +374,7 @@ public class PlayerEntity extends Entity {
                     if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
                         if (inputter instanceof PlayerInput) {
                             var aiInput = new AiInput(inputRecorder);
-                            var newPlayer = new PlayerEntity(startX, startY, name);
+                            var newPlayer = new PlayerEntity(startX, startY, startRotation, name);
                             newPlayer.inputter = aiInput;
                             gameScreen.addEntities.add(newPlayer);
                             core.transition(

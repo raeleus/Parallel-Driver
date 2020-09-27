@@ -135,7 +135,7 @@ public class GameScreen extends JamScreen {
                         break;
                     default:
                         if (valuesMap.get("id").asInt() == currentId) {
-                            var player = new PlayerEntity(x, y, name);
+                            var player = new PlayerEntity(x, y, rotation, name);
                             player.inputter = new PlayerInput();
                             player.inputRecorder = new InputRecorder();
                             entityController.add(player);
