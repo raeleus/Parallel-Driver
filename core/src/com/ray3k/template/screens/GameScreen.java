@@ -10,11 +10,11 @@ import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.actions.TemporalAction;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.crashinvaders.vfx.effects.ChainVfxEffect;
 import com.dongbat.jbump.World;
 import com.ray3k.template.*;
 import com.ray3k.template.OgmoReader.*;
@@ -22,10 +22,12 @@ import com.ray3k.template.entities.*;
 import com.ray3k.template.entities.PlayerEntity.*;
 import com.ray3k.template.screens.DialogPause.*;
 import com.ray3k.template.transitions.*;
+import com.ray3k.template.vfx.*;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
-import static com.ray3k.template.Core.*;
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.*;
 import static com.ray3k.template.Core.Binding.*;
+import static com.ray3k.template.Core.*;
 
 public class GameScreen extends JamScreen {
     public static GameScreen gameScreen;
@@ -33,7 +35,7 @@ public class GameScreen extends JamScreen {
     public Stage stage;
     public static ShapeDrawer shapeDrawer;
     public boolean paused;
-    private ChainVfxEffect vfxEffect;
+    private GlitchEffect vfxEffect;
     public Array<Entity> addEntities;
     public int currentId;
     public int levelId;
@@ -42,7 +44,7 @@ public class GameScreen extends JamScreen {
     public static final int LAST_LEVEL = 5;
     
     public GameScreen() {
-        this(null, 5, 0);
+        this(null, 1, 0);
     }
     
     public GameScreen(Array<Entity> addEntities, int levelId, int currentId) {
@@ -103,6 +105,25 @@ public class GameScreen extends JamScreen {
                 playerEntities.add((PlayerEntity) entity);
             }
         }
+    
+        vfxEffect = new GlitchEffect();
+        vfxEffect.setAmount(0);
+        vfxEffect.rebind();
+        vfxManager.addEffect(vfxEffect);
+    
+        stage.addAction(sequence(delay(.05f), new TemporalAction(.25f) {
+            @Override
+            protected void update(float percent) {
+                vfxEffect.setAmount(percent * .2f);
+                vfxEffect.rebind();
+            }
+        }, new TemporalAction(.25f) {
+            @Override
+            protected void update(float percent) {
+                vfxEffect.setAmount((1 - percent) * .2f);
+                vfxEffect.rebind();
+            }
+        }, run(() -> vfxManager.removeEffect(vfxEffect))));
         
         var ogmoReader = new OgmoReader();
         ogmoReader.addListener(new OgmoAdapter() {
@@ -238,6 +259,7 @@ public class GameScreen extends JamScreen {
     public void hide() {
         super.hide();
         vfxManager.removeAllEffects();
+        vfxEffect.dispose();
         entityController.dispose();
     }
 }
