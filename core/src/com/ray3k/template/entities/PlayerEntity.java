@@ -212,6 +212,11 @@ public class PlayerEntity extends Entity {
     
         setCollisionBox(minX, minY, maxX - minX, maxY - minY, PLAYER_COLLISION_FILTER);
         setPosition(startX, startY);
+        rotation = 0;
+        deltaX = 0;
+        deltaY = 0;
+        velocity.set(0, 0);
+        acceleration.set(0, 0);
         world.update(item, x, y);
         
         inputter.reset();
@@ -283,7 +288,7 @@ public class PlayerEntity extends Entity {
         skeleton.getRootBone().setRotation(rotation);
         updateBbox();
         
-        gameScreen.camera.position.set(x, y, 0);
+        if (inputter instanceof PlayerInput) gameScreen.camera.position.set(x, y, 0);
     }
     
     @Override
@@ -326,7 +331,8 @@ public class PlayerEntity extends Entity {
                     polygon2.setVertices(new float[]{wall.x + wall.bboxX, wall.y + wall.bboxY, wall.x + wall.bboxX + wall.bboxWidth, wall.y + wall.bboxY, wall.x + wall.bboxX + wall.bboxWidth, wall.y + wall.bboxY + wall.bboxHeight, wall.x + wall.bboxX, wall.bboxY + wall.bboxHeight});
                     if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
                         if (inputter instanceof PlayerInput) {
-                            core.transition(new GameScreen(null, "test-level", gameScreen.currentId),
+                            core.transition(
+                                    new GameScreen(gameScreen.addEntities, "test-level", gameScreen.currentId),
                                     new TransitionSlide(270, Interpolation.bounce), .5f);
                         } else {
                             destroy = true;
