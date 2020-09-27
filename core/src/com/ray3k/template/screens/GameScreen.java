@@ -188,7 +188,9 @@ public class GameScreen extends JamScreen {
             public void level(String ogmoVersion, int width, int height, int offsetX, int offsetY,
                               ObjectMap<String, OgmoValue> valuesMap) {
                 camera.position.set(width / 2f, height / 2f, 0);
-                camera.zoom = 4;
+                float widthRatio = (float) width / Gdx.graphics.getWidth();
+                float heightRatio = (float) height / Gdx.graphics.getHeight();
+                camera.zoom = Math.max(widthRatio, heightRatio);
             }
     
             private String layerName;
@@ -206,7 +208,6 @@ public class GameScreen extends JamScreen {
                     entityController.add(decal);
                     decal.depth = BACKGROUND_DEPTH;
                 } else if (layerName.equals("foreground")) {
-                    System.out.println("hit");
                     var decal = new BackgroundEntity(texture, centerX, centerY);
                     entityController.add(decal);
                     decal.depth = FOREGROUND_DEPTH;
