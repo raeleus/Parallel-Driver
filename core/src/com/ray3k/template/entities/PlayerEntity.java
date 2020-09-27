@@ -5,6 +5,7 @@ import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.Intersector;
 import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.utils.Array;
 import com.dongbat.jbump.CollisionFilter;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response;
@@ -13,13 +14,14 @@ import com.ray3k.template.*;
 import com.ray3k.template.screens.*;
 import com.ray3k.template.transitions.*;
 
-import static com.ray3k.template.Core.Binding.*;
 import static com.ray3k.template.Core.*;
+import static com.ray3k.template.Core.Binding.*;
 import static com.ray3k.template.Resources.*;
 import static com.ray3k.template.screens.GameScreen.*;
 
 public class PlayerEntity extends Entity {
     public Inputter inputter;
+    public InputRecorder inputRecorder;
     
     float rotation;
     
@@ -213,6 +215,11 @@ public class PlayerEntity extends Entity {
     
     @Override
     public void act(float delta) {
+        //input recorder
+        if (inputRecorder != null) {
+            inputRecorder.update(delta);
+        }
+        
         //input
         int turn = 0;
         if (inputter.isBindingPressed(TURN_RIGHT)) {
@@ -310,6 +317,7 @@ public class PlayerEntity extends Entity {
                     if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
                         destroy = true;
                         core.transition(new GameScreen(null, "test-level", gameScreen.currentId), new TransitionSlide(270, Interpolation.bounce), .5f);
+                        System.out.println(inputRecorder);
                     }
                 }
             } else if (collision.other.userData instanceof ExitEntity) {
@@ -364,6 +372,56 @@ public class PlayerEntity extends Entity {
         @Override
         public boolean isBindingPressed(Binding binding) {
             return gameScreen.isBindingPressed(binding);
+        }
+    }
+    
+    public final static class InputRecorder {
+        public Array<InputRecord> leftInputs = new Array<>();
+        public Array<InputRecord> rightInputs = new Array<>();
+        public float frame;
+        
+        public void update(float delta) {
+            frame += delta;
+            if (leftInputs.size == 0 || leftInputs.peek().binding == null) {
+                if (gameScreen.isBindingPressed(TURN_LEFT)) {
+                    leftInputs.add(new InputRecord(frame, TURN_LEFT));
+                }
+            } else if (leftInputs.size != 0 && leftInputs.peek().binding != null) {
+                if (!gameScreen.isBindingPressed(TURN_LEFT)) {
+                    leftInputs.add(new InputRecord(frame, null));
+                }
+            }
+    
+            if (rightInputs.size == 0 || rightInputs.peek().binding == null) {
+                if (gameScreen.isBindingPressed(TURN_RIGHT)) {
+                    rightInputs.add(new InputRecord(frame, TURN_RIGHT));
+                }
+            } else if (rightInputs.size != 0 && rightInputs.peek().binding != null) {
+                if (!gameScreen.isBindingPressed(TURN_RIGHT)) {
+                    rightInputs.add(new InputRecord(frame, null));
+                }
+            }
+        }
+    
+        @Override
+        public String toString() {
+            
+            return leftInputs.toString() + "\n~~~\n" + rightInputs.toString();
+        }
+    }
+    
+    public final static class InputRecord {
+        public float frame;
+        public Binding binding;
+    
+        public InputRecord(float frame, Binding binding) {
+            this.frame = frame;
+            this.binding = binding;
+        }
+    
+        @Override
+        public String toString() {
+            return frame + " " + binding;
         }
     }
 }
