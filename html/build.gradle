@@ -1,4 +1,5 @@
 gwt {
+    compiler.style = org.wisepersist.gradle.plugins.gwt.Style.DETAILED
     gwtVersion='2.9.0' // Should match the gwt version used for building the gwt backend
     maxHeapSize="1G" // Default 256m is not enough for gwt compiler. GWT is HUNGRY
     minHeapSize="1G"
