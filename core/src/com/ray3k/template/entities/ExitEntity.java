@@ -32,12 +32,12 @@ public class ExitEntity extends Entity {
     
     @Override
     public void draw(float delta) {
-        var rect = world.getRect(item);
-        if (rect != null) {
-            shapeDrawer.setColor(Color.PURPLE);
-            shapeDrawer.setDefaultLineWidth(1);
-            shapeDrawer.rectangle(rect.x, rect.y, rect.w, rect.h);
-        }
+//        var rect = world.getRect(item);
+//        if (rect != null) {
+//            shapeDrawer.setColor(Color.PURPLE);
+//            shapeDrawer.setDefaultLineWidth(1);
+//            shapeDrawer.rectangle(rect.x, rect.y, rect.w, rect.h);
+//        }
     }
     
     @Override

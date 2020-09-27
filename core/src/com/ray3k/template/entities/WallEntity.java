@@ -29,12 +29,12 @@ public class WallEntity extends Entity {
     
     @Override
     public void draw(float delta) {
-        var rect = world.getRect(item);
-        if (rect != null) {
-            shapeDrawer.setColor(Color.RED);
-            shapeDrawer.setDefaultLineWidth(4);
-            shapeDrawer.rectangle(rect.x, rect.y, rect.w, rect.h);
-        }
+//        var rect = world.getRect(item);
+//        if (rect != null) {
+//            shapeDrawer.setColor(Color.RED);
+//            shapeDrawer.setDefaultLineWidth(4);
+//            shapeDrawer.rectangle(rect.x, rect.y, rect.w, rect.h);
+//        }
     }
     
     @Override

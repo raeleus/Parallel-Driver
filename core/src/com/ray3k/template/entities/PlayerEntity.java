@@ -296,22 +296,22 @@ public class PlayerEntity extends Entity {
     
     @Override
     public void draw(float delta) {
-        var rect = world.getRect(item);
-        if (rect != null) {
-            shapeDrawer.setColor(Color.GREEN);
-            shapeDrawer.setDefaultLineWidth(1);
-            shapeDrawer.rectangle(rect.x, rect.y, rect.w, rect.h);
-            
-            shapeDrawer.setColor(Color.RED);
-            shapeDrawer.filledRectangle(rearWheel.x - 5f, rearWheel.y - 5f, 10f, 10f);
-    
-            shapeDrawer.setColor(Color.PURPLE);
-            shapeDrawer.filledRectangle(frontWheel.x - 5f, frontWheel.y - 5f, 10f, 10f);
-            shapeDrawer.setColor(Color.ORANGE);
-            var bbox = (BoundingBoxAttachment) skeleton.findSlot("bbox").getAttachment();
-            polygon1.setVertices(Utils.boundingBoxAttachmentToTriangles(skeletonBounds, bbox));
-            shapeDrawer.polygon(polygon1);
-        }
+//        var rect = world.getRect(item);
+//        if (rect != null) {
+//            shapeDrawer.setColor(Color.GREEN);
+//            shapeDrawer.setDefaultLineWidth(1);
+//            shapeDrawer.rectangle(rect.x, rect.y, rect.w, rect.h);
+//
+//            shapeDrawer.setColor(Color.RED);
+//            shapeDrawer.filledRectangle(rearWheel.x - 5f, rearWheel.y - 5f, 10f, 10f);
+//
+//            shapeDrawer.setColor(Color.PURPLE);
+//            shapeDrawer.filledRectangle(frontWheel.x - 5f, frontWheel.y - 5f, 10f, 10f);
+//            shapeDrawer.setColor(Color.ORANGE);
+//            var bbox = (BoundingBoxAttachment) skeleton.findSlot("bbox").getAttachment();
+//            polygon1.setVertices(Utils.boundingBoxAttachmentToTriangles(skeletonBounds, bbox));
+//            shapeDrawer.polygon(polygon1);
+//        }
     }
     
     @Override
