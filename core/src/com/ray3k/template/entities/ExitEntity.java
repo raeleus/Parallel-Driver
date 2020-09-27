@@ -8,8 +8,11 @@ import static com.ray3k.template.collisions.NullCollisionFilter.*;
 import static com.ray3k.template.screens.GameScreen.*;
 
 public class ExitEntity extends Entity {
-    public ExitEntity(float spawnX, float spawnY, float width, float height) {
+    public int id;
+    
+    public ExitEntity(float spawnX, float spawnY, float width, float height, int id) {
         setCollisionBox(spawnX, spawnY, width, height, nullCollisionFilter);
+        this.id = id;
     }
     
     @Override

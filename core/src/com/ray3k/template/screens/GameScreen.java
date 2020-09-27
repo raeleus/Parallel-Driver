@@ -140,12 +140,12 @@ public class GameScreen extends JamScreen {
                             if (node.y > maxY) maxY = node.y;
                         }
     
-                        var exit = new ExitEntity(minX, minY, maxX - minX, maxY - minY);
+                        var exit = new ExitEntity(minX, minY, maxX - minX, maxY - minY, valuesMap.get("id").asInt());
                         entityController.add(exit);
                         break;
                     default:
                         if (valuesMap.get("id").asInt() == currentId) {
-                            var player = new PlayerEntity(x, y, rotation, name);
+                            var player = new PlayerEntity(x, y, rotation, name, currentId);
                             player.inputter = new PlayerInput();
                             player.inputRecorder = new InputRecorder();
                             entityController.add(player);
