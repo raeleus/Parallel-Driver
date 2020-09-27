@@ -25,6 +25,7 @@ import com.ray3k.template.transitions.*;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
 import static com.ray3k.template.Core.*;
+import static com.ray3k.template.Core.Binding.*;
 
 public class GameScreen extends JamScreen {
     public static GameScreen gameScreen;
@@ -188,6 +189,10 @@ public class GameScreen extends JamScreen {
             if (nextLevel) {
                 if (levelId < LAST_LEVEL) core.transition(new GameScreen(null, levelId + 1, 0), new TransitionSlide(270, Interpolation.bounce), .5f);
                 else core.transition(new CompleteScreen(), new TransitionSlide(270, Interpolation.bounce), .5f);
+            }
+        } else {
+            if (isBindingJustPressed(RESET)) {
+                core.transition(new GameScreen(null, levelId, 0), new TransitionSlide(270, Interpolation.bounce), .5f);
             }
         }
     }
