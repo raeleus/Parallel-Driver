@@ -34,6 +34,8 @@ public class GameScreen extends JamScreen {
     private String levelName;
     public Array<Entity> addEntities;
     public int currentId;
+    public Array<PlayerEntity> playerEntities = new Array<>();
+    public boolean endGame = true;
     
     public GameScreen() {
         this(null, "test-level", 0);
@@ -92,6 +94,10 @@ public class GameScreen extends JamScreen {
             entity.item = null;
             entity.destroy = false;
             entityController.add(entity);
+            
+            if (entity instanceof PlayerEntity) {
+                playerEntities.add((PlayerEntity) entity);
+            }
         }
         
         var ogmoReader = new OgmoReader();
@@ -139,6 +145,8 @@ public class GameScreen extends JamScreen {
                             player.inputter = new PlayerInput();
                             player.inputRecorder = new InputRecorder();
                             entityController.add(player);
+                            playerEntities.add(player);
+                            endGame = false;
                             
                             var cameraEntity = new CameraEntity(player);
                             entityController.add(cameraEntity);
@@ -164,6 +172,20 @@ public class GameScreen extends JamScreen {
             vfxManager.update(delta);
         }
         stage.act(delta);
+        
+        if (endGame) {
+            boolean nextLevel = true;
+            for (var player : playerEntities) {
+                if (!player.destroy) {
+                    nextLevel = false;
+                    break;
+                }
+            }
+            
+            if (nextLevel) {
+                System.out.println("done");
+            }
+        }
     }
     
     @Override
