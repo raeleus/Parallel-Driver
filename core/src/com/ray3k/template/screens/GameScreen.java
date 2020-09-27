@@ -162,7 +162,7 @@ public class GameScreen extends JamScreen {
             @Override
             public void level(String ogmoVersion, int width, int height, int offsetX, int offsetY,
                               ObjectMap<String, OgmoValue> valuesMap) {
-                camera.position.set(width / 2, height / 2, 0);
+                camera.position.set(width / 2f, height / 2f, 0);
                 camera.zoom = 4;
             }
         });
