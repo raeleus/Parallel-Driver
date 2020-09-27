@@ -28,6 +28,7 @@ public class MenuScreen extends JamScreen {
     @Override
     public void show() {
         super.show();
+        bgm_engine.stop();
     
         final Music bgm = bgm_menu;
         if (!bgm.isPlaying()) {

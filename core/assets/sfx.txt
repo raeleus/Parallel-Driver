@@ -1,4 +1,5 @@
 sfx/click.mp3
+sfx/glitch.mp3
 sfx/logo/libgdx-chop.mp3
 sfx/logo/libgdx-kikiki.mp3
 sfx/logo/libgdx-loser.mp3
@@ -10,3 +11,4 @@ sfx/logo/ray3k.mp3
 sfx/logo/woosh.mp3
 sfx/title/boom.mp3
 sfx/title/doppler.mp3
+sfx/wreck.mp3

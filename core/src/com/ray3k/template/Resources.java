@@ -84,6 +84,8 @@ public class Resources {
 
     public static Sound sfx_click;
 
+    public static Sound sfx_glitch;
+
     public static Sound sfx_logoLibgdxChop;
 
     public static Sound sfx_logoLibgdxKikiki;
@@ -106,7 +108,11 @@ public class Resources {
 
     public static Sound sfx_titleDoppler;
 
+    public static Sound sfx_wreck;
+
     public static Music bgm_audioSample;
+
+    public static Music bgm_engine;
 
     public static Music bgm_menu;
 
@@ -169,6 +175,7 @@ public class Resources {
         ZaidaAnimation.stand = spine_zaida.findAnimation("stand");
         textures_textures = assetManager.get("textures/textures.atlas");
         sfx_click = assetManager.get("sfx/click.mp3");
+        sfx_glitch = assetManager.get("sfx/glitch.mp3");
         sfx_logoLibgdxChop = assetManager.get("sfx/logo/libgdx-chop.mp3");
         sfx_logoLibgdxKikiki = assetManager.get("sfx/logo/libgdx-kikiki.mp3");
         sfx_logoLibgdxLoser = assetManager.get("sfx/logo/libgdx-loser.mp3");
@@ -180,7 +187,9 @@ public class Resources {
         sfx_logoWoosh = assetManager.get("sfx/logo/woosh.mp3");
         sfx_titleBoom = assetManager.get("sfx/title/boom.mp3");
         sfx_titleDoppler = assetManager.get("sfx/title/doppler.mp3");
+        sfx_wreck = assetManager.get("sfx/wreck.mp3");
         bgm_audioSample = assetManager.get("bgm/audio-sample.mp3");
+        bgm_engine = assetManager.get("bgm/engine.mp3");
         bgm_menu = assetManager.get("bgm/menu.mp3");
     }
 

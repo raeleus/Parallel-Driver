@@ -16,6 +16,7 @@ import com.rafaskoberg.gdx.typinglabel.TypingLabel;
 import com.ray3k.template.*;
 
 import static com.ray3k.template.Core.*;
+import static com.ray3k.template.Resources.*;
 
 public class CompleteScreen extends JamScreen {
     private Stage stage;
@@ -24,6 +25,7 @@ public class CompleteScreen extends JamScreen {
     @Override
     public void show() {
         super.show();
+        bgm_engine.stop();
         
         stage = new Stage(new ScreenViewport(), batch);
         Gdx.input.setInputProcessor(stage);

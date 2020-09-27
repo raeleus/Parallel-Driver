@@ -36,6 +36,8 @@ public class TitleScreen extends JamScreen {
     public void show() {
         super.show();
         
+        bgm_menu.stop();
+        
         spineDrawables = new Array<>();
         sounds = new ObjectSet<>();
     
@@ -48,6 +50,10 @@ public class TitleScreen extends JamScreen {
         
         stage = new Stage(new ScreenViewport(), batch);
         Gdx.input.setInputProcessor(stage);
+    
+        stage.addAction(Actions.delay(.05f, Actions.run(() -> {
+            sfx_titleBoom.play(sfx);
+        })));
         
         Table root = new Table();
         root.setFillParent(true);

@@ -335,6 +335,7 @@ public class PlayerEntity extends Entity {
                     polygon2.setVertices(new float[]{wall.x + wall.bboxX, wall.y + wall.bboxY, wall.x + wall.bboxX + wall.bboxWidth, wall.y + wall.bboxY, wall.x + wall.bboxX + wall.bboxWidth, wall.y + wall.bboxY + wall.bboxHeight, wall.x + wall.bboxX, wall.bboxY + wall.bboxHeight});
                     if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
                         if (inputter instanceof PlayerInput) {
+                            sfx_wreck.play(sfx);
                             core.transition(
                                     new GameScreen(gameScreen.addEntities, gameScreen.levelId, gameScreen.currentId),
                                     new TransitionSlide(270, Interpolation.bounce), .5f);

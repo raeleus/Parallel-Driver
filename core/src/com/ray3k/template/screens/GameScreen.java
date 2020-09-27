@@ -28,6 +28,7 @@ import space.earlygrey.shapedrawer.ShapeDrawer;
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.*;
 import static com.ray3k.template.Core.Binding.*;
 import static com.ray3k.template.Core.*;
+import static com.ray3k.template.Resources.*;
 
 public class GameScreen extends JamScreen {
     public static GameScreen gameScreen;
@@ -55,6 +56,9 @@ public class GameScreen extends JamScreen {
     
     @Override
     public void show() {
+        bgm_engine.setLooping(true);
+        bgm_engine.setVolume(sfx);
+        if (!bgm_engine.isPlaying()) bgm_engine.play();
         world = new World<>();
         gameScreen = this;
     
@@ -117,7 +121,7 @@ public class GameScreen extends JamScreen {
                 vfxEffect.setAmount(percent * .2f);
                 vfxEffect.rebind();
             }
-        }, new TemporalAction(.25f) {
+        }, run(() -> sfx_glitch.play(sfx)), new TemporalAction(.25f) {
             @Override
             protected void update(float percent) {
                 vfxEffect.setAmount((1 - percent) * .2f);
