@@ -1,0 +1,249 @@
+{
+  "ogmoVersion": "3.3.0",
+  "width": 1688,
+  "height": 1712,
+  "offsetX": 0,
+  "offsetY": 0,
+  "layers": [
+    {
+      "name": "entities",
+      "_eid": "14123759",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 211,
+      "gridCellsY": 214,
+      "entities": [
+        {
+          "name": "car-tanks-alot",
+          "id": 1,
+          "_eid": "14199742",
+          "x": 184,
+          "y": 1432,
+          "originX": 99.5,
+          "originY": 67.5,
+          "rotation": -89,
+          "values": {"id": 0}
+        },
+        {
+          "name": "car-hoop-tee",
+          "id": 2,
+          "_eid": "14160372",
+          "x": 1504,
+          "y": 1504,
+          "originX": 54.5,
+          "originY": 29.5,
+          "rotation": -89,
+          "values": {"id": 1}
+        },
+        {
+          "name": "car-dick's-weiner",
+          "id": 3,
+          "_eid": "14120327",
+          "x": 1480,
+          "y": 1080,
+          "originX": 84,
+          "originY": 35.5,
+          "rotation": -90,
+          "values": {"id": 2}
+        }
+      ]
+    },
+    {
+      "name": "walls",
+      "_eid": "14121812",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 211,
+      "gridCellsY": 214,
+      "entities": [
+        {
+          "name": "wall",
+          "id": 0,
+          "_eid": "14214338",
+          "x": -8,
+          "y": 1696,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 0, "y": -8},
+            {"x": 56, "y": -8},
+            {"x": 48, "y": 1696}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 1,
+          "_eid": "14214338",
+          "x": 56,
+          "y": -8,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 1696, "y": 0},
+            {"x": 1696, "y": 40},
+            {"x": 64, "y": 32}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 2,
+          "_eid": "14214338",
+          "x": 1688,
+          "y": 40,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 1688, "y": 1728},
+            {"x": 1632, "y": 1728},
+            {"x": 1632, "y": 40}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 3,
+          "_eid": "14214338",
+          "x": 48,
+          "y": 1696,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 48, "y": 1608},
+            {"x": 1640, "y": 1608},
+            {"x": 1648, "y": 1712}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 4,
+          "_eid": "14214338",
+          "x": 328,
+          "y": 1616,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 328, "y": 336},
+            {"x": 568, "y": 336},
+            {"x": 568, "y": 1616}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 5,
+          "_eid": "14214338",
+          "x": 1328,
+          "y": 1608,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 1328, "y": 1320},
+            {"x": 1240, "y": 1320},
+            {"x": 1240, "y": 1608}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 6,
+          "_eid": "14214338",
+          "x": 1328,
+          "y": 1072,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 1208, "y": 1072},
+            {"x": 1208, "y": 664},
+            {"x": 1328, "y": 664}
+          ]
+        },
+        {
+          "name": "wall",
+          "id": 7,
+          "_eid": "14214338",
+          "x": 1208,
+          "y": 352,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 1352, "y": 352},
+            {"x": 1352, "y": 264},
+            {"x": 1200, "y": 264}
+          ]
+        },
+        {
+          "name": "exit",
+          "id": 8,
+          "_eid": "16710961",
+          "x": 1376,
+          "y": 1608,
+          "originX": 8,
+          "originY": 8,
+          "nodes": [
+            {"x": 1376, "y": 1288},
+            {"x": 1600, "y": 1288},
+            {"x": 1592, "y": 1608}
+          ],
+          "values": {"id": 0}
+        },
+        {
+          "name": "exit",
+          "id": 9,
+          "_eid": "16710961",
+          "x": 96,
+          "y": 1256,
+          "originX": 8,
+          "originY": 8,
+          "nodes": [
+            {"x": 96, "y": 1120},
+            {"x": 288, "y": 1120},
+            {"x": 288, "y": 1256}
+          ],
+          "values": {"id": 1}
+        },
+        {
+          "name": "exit",
+          "id": 10,
+          "_eid": "16710961",
+          "x": 88,
+          "y": 1048,
+          "originX": 8,
+          "originY": 8,
+          "nodes": [
+            {"x": 88, "y": 904},
+            {"x": 296, "y": 904},
+            {"x": 288, "y": 1048}
+          ],
+          "values": {"id": 2}
+        },
+        {
+          "name": "wall",
+          "id": 11,
+          "_eid": "14214338",
+          "x": 576,
+          "y": 816,
+          "originX": 20,
+          "originY": 20,
+          "nodes": [
+            {"x": 568, "y": 616},
+            {"x": 896, "y": 624},
+            {"x": 896, "y": 816}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "decals",
+      "_eid": "14218753",
+      "offsetX": 0,
+      "offsetY": 0,
+      "gridCellWidth": 8,
+      "gridCellHeight": 8,
+      "gridCellsX": 211,
+      "gridCellsY": 214,
+      "decals": [],
+      "folder": ""
+    }
+  ]
+}

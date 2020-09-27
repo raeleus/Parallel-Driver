@@ -172,8 +172,8 @@ public class PlayerEntity extends Entity {
                 break;
             case "car-tanks-alot":
                 setSkeletonData(spine_carTanksAlot, spine_carTanksAlotAnimationData);
-                wheelBase = 40;
-                steeringAngle = 20;
+                wheelBase = 60;
+                steeringAngle = 30;
                 enginePower = 300;
                 friction = -.9f;
                 drag = -.0015f;
