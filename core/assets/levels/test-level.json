@@ -15,7 +15,26 @@
       "gridCellsX": 217,
       "gridCellsY": 177,
       "entities": [
-        {"name": "car-tursula", "id": 17, "_eid": "14192942", "x": 197.60098315014227, "y": 201.84558075276698, "originX": 69, "originY": 32}
+        {
+          "name": "car-dick's-weiner",
+          "id": 0,
+          "_eid": "14120327",
+          "x": 184,
+          "y": 272,
+          "originX": 84,
+          "originY": 35.5,
+          "values": {"id": 0}
+        },
+        {
+          "name": "car-ground-roller",
+          "id": 1,
+          "_eid": "14136955",
+          "x": 176,
+          "y": 112,
+          "originX": 78,
+          "originY": 39,
+          "values": {"id": 1}
+        }
       ]
     },
     {
@@ -110,6 +129,20 @@
             {"x": 80, "y": 1296},
             {"x": 1672, "y": 1296},
             {"x": 1680, "y": 1424}
+          ]
+        },
+        {
+          "name": "exit",
+          "id": 7,
+          "_eid": "16710961",
+          "x": 1408,
+          "y": 1296,
+          "originX": 8,
+          "originY": 8,
+          "nodes": [
+            {"x": 1408, "y": 928},
+            {"x": 1672, "y": 928},
+            {"x": 1672, "y": 1296}
           ]
         }
       ]

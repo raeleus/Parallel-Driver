@@ -10,6 +10,8 @@ import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response;
 import com.esotericsoftware.spine.attachments.BoundingBoxAttachment;
 import com.ray3k.template.*;
+import com.ray3k.template.screens.*;
+import com.ray3k.template.transitions.*;
 
 import static com.ray3k.template.Core.Binding.*;
 import static com.ray3k.template.Core.*;
@@ -305,6 +307,19 @@ public class PlayerEntity extends Entity {
                     polygon2.setVertices(new float[]{wall.x + wall.bboxX, wall.y + wall.bboxY, wall.x + wall.bboxX + wall.bboxWidth, wall.y + wall.bboxY, wall.x + wall.bboxX + wall.bboxWidth, wall.y + wall.bboxY + wall.bboxHeight, wall.x + wall.bboxX, wall.bboxY + wall.bboxHeight});
                     if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
                         destroy = true;
+                        core.transition(new GameScreen(null, "test-level", gameScreen.currentId), new TransitionSlide(270, Interpolation.bounce), .5f);
+                    }
+                }
+            } else if (collision.other.userData instanceof ExitEntity) {
+                var exit = (ExitEntity) collision.other.userData;
+                var bbox = (BoundingBoxAttachment) skeleton.findSlot("bbox").getAttachment();
+                var verts = Utils.boundingBoxAttachmentToTriangles(skeletonBounds, bbox);
+                for (int j = 0; j < verts.length; j += 6) {
+                    polygon1.setVertices(new float[]{verts[j], verts[j+1], verts[j+2], verts[j+3], verts[j+4], verts[j+5]});
+                    polygon2.setVertices(new float[]{exit.x + exit.bboxX, exit.y + exit.bboxY, exit.x + exit.bboxX + exit.bboxWidth, exit.y + exit.bboxY, exit.x + exit.bboxX + exit.bboxWidth, exit.y + exit.bboxY + exit.bboxHeight, exit.x + exit.bboxX, exit.bboxY + exit.bboxHeight});
+                    if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
+                        destroy = true;
+                        core.transition(new GameScreen(null, "test-level", gameScreen.currentId + 1), new TransitionSlide(270, Interpolation.bounce), .5f);
                     }
                 }
             }
@@ -335,7 +350,7 @@ public class PlayerEntity extends Entity {
     }
     
     private final static CollisionFilter PLAYER_COLLISION_FILTER = (item, other) -> {
-        if (other.userData instanceof WallEntity) return Response.cross;
+        if (other.userData instanceof WallEntity || other.userData instanceof ExitEntity) return Response.cross;
         else return null;
     };
 }

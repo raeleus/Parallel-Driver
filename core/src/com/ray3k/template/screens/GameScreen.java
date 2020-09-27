@@ -16,13 +16,11 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.crashinvaders.vfx.effects.ChainVfxEffect;
 import com.ray3k.template.*;
 import com.ray3k.template.OgmoReader.*;
-import com.ray3k.template.Resources.*;
 import com.ray3k.template.entities.*;
 import com.ray3k.template.screens.DialogPause.*;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
 import static com.ray3k.template.Core.*;
-import static com.ray3k.template.Resources.*;
 
 public class GameScreen extends JamScreen {
     public static GameScreen gameScreen;
@@ -33,14 +31,16 @@ public class GameScreen extends JamScreen {
     private ChainVfxEffect vfxEffect;
     private String levelName;
     private Array<Entity> addEntities;
+    public int currentId;
     
     public GameScreen() {
-        this(null, "test-level");
+        this(null, "test-level", 0);
     }
     
-    public GameScreen(Array<Entity> addEntities, String levelName) {
+    public GameScreen(Array<Entity> addEntities, String levelName, int currentId) {
         this.addEntities = addEntities == null ? new Array<>() : new Array<>(addEntities);
         this.levelName = levelName;
+        this.currentId = currentId;
     }
     
     @Override
@@ -113,9 +113,27 @@ public class GameScreen extends JamScreen {
                         var wall = new WallEntity(minX, minY, maxX - minX, maxY - minY);
                         entityController.add(wall);
                         break;
+                    case "exit":
+                        minX = x;
+                        minY = y;
+                        maxX = x;
+                        maxY = y;
+    
+                        for (var node : nodes) {
+                            if (node.x < minX) minX = node.x;
+                            if (node.x > maxX) maxX = node.x;
+                            if (node.y < minY) minY = node.y;
+                            if (node.y > maxY) maxY = node.y;
+                        }
+    
+                        var exit = new ExitEntity(minX, minY, maxX - minX, maxY - minY);
+                        entityController.add(exit);
+                        break;
                     default:
-                        var player = new PlayerEntity(x, y, name);
-                        entityController.add(player);
+                        if (valuesMap.get("id").asInt() == currentId) {
+                            var player = new PlayerEntity(x, y, name);
+                            entityController.add(player);
+                        }
                         break;
                 }
             }
