@@ -19,6 +19,8 @@ import static com.ray3k.template.Resources.*;
 import static com.ray3k.template.screens.GameScreen.*;
 
 public class PlayerEntity extends Entity {
+    public Inputter inputter;
+    
     float rotation;
     
     boolean checkCollisions;
@@ -213,10 +215,10 @@ public class PlayerEntity extends Entity {
     public void act(float delta) {
         //input
         int turn = 0;
-        if (gameScreen.isBindingPressed(TURN_RIGHT)) {
+        if (inputter.isBindingPressed(TURN_RIGHT)) {
             turn -= 1;
         }
-        if (gameScreen.isBindingPressed(TURN_LEFT)) {
+        if (inputter.isBindingPressed(TURN_LEFT)) {
             turn += 1;
         }
         steerAngle = turn * steeringAngle;
@@ -353,4 +355,15 @@ public class PlayerEntity extends Entity {
         if (other.userData instanceof WallEntity || other.userData instanceof ExitEntity) return Response.cross;
         else return null;
     };
+    
+    public interface Inputter {
+        boolean isBindingPressed(Binding binding);
+    }
+    
+    public final static class PlayerInput implements Inputter {
+        @Override
+        public boolean isBindingPressed(Binding binding) {
+            return gameScreen.isBindingPressed(binding);
+        }
+    }
 }

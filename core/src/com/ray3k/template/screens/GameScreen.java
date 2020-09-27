@@ -17,6 +17,7 @@ import com.crashinvaders.vfx.effects.ChainVfxEffect;
 import com.ray3k.template.*;
 import com.ray3k.template.OgmoReader.*;
 import com.ray3k.template.entities.*;
+import com.ray3k.template.entities.PlayerEntity.*;
 import com.ray3k.template.screens.DialogPause.*;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
@@ -132,6 +133,7 @@ public class GameScreen extends JamScreen {
                     default:
                         if (valuesMap.get("id").asInt() == currentId) {
                             var player = new PlayerEntity(x, y, name);
+                            player.inputter = new PlayerInput();
                             entityController.add(player);
                         }
                         break;
