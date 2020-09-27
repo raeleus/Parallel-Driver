@@ -177,16 +177,21 @@ public class GameScreen extends JamScreen {
                             playerEntities.add(player);
                             endGame = false;
                             
-                            var cameraEntity = new CameraEntity(player);
+                            var cameraEntity = new CameraEntity(player, levelWidth, levelHeight);
                             entityController.add(cameraEntity);
                         }
                         break;
                 }
             }
             
+            private float levelWidth;
+            private float levelHeight;
+            
             @Override
             public void level(String ogmoVersion, int width, int height, int offsetX, int offsetY,
                               ObjectMap<String, OgmoValue> valuesMap) {
+                levelWidth = width;
+                levelHeight = height;
                 camera.position.set(width / 2f, height / 2f, 0);
                 float widthRatio = (float) width / viewport.getWorldWidth();
                 float heightRatio = (float) height / viewport.getWorldHeight();
