@@ -1,20 +1,21 @@
 package com.ray3k.template.entities;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasSprite;
+import com.badlogic.gdx.utils.Disposable;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
 
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.*;
 
-public class DecalEntity extends Entity {
-    private AtlasSprite atlasSprite;
+public class BackgroundEntity extends Entity implements Disposable {
+    private Texture texture;
     
-    public DecalEntity(String path, float x, float y) {
-        atlasSprite = new AtlasSprite(textures_textures.findRegion(path));
-        atlasSprite.setOriginCenter();
-        depth = BACKGROUND_DEPTH;
-        setPosition(x, y);
+    public BackgroundEntity(String name, float centerX, float centerY) {
+        texture = new Texture(Gdx.files.internal("backgrounds/" + name));
+        setPosition(centerX - texture.getWidth() / 2, centerY - texture.getHeight() / 2);
     }
     
     @Override
@@ -34,8 +35,7 @@ public class DecalEntity extends Entity {
     
     @Override
     public void draw(float delta) {
-        atlasSprite.setOriginBasedPosition(x, y);
-        atlasSprite.draw(batch);
+        batch.draw(texture, x, y);
     }
     
     @Override
@@ -46,5 +46,10 @@ public class DecalEntity extends Entity {
     @Override
     public void collision(Collisions collisions) {
     
+    }
+    
+    @Override
+    public void dispose() {
+        texture.dispose();
     }
 }

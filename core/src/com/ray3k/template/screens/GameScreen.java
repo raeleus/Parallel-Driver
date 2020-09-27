@@ -186,6 +186,28 @@ public class GameScreen extends JamScreen {
                 camera.position.set(width / 2f, height / 2f, 0);
                 camera.zoom = 4;
             }
+    
+            private String layerName;
+            
+            @Override
+            public void layer(String name, int gridCellWidth, int gridCellHeight, int offsetX, int offsetY) {
+                layerName = name;
+            }
+    
+            @Override
+            public void decal(int centerX, int centerY, float scaleX, float scaleY, int rotation, String texture,
+                              String folder) {
+                if (layerName.equals("background")) {
+                    var decal = new BackgroundEntity(texture, centerX, centerY);
+                    entityController.add(decal);
+                    decal.depth = BACKGROUND_DEPTH;
+                } else if (layerName.equals("foreground")) {
+                    System.out.println("hit");
+                    var decal = new BackgroundEntity(texture, centerX, centerY);
+                    entityController.add(decal);
+                    decal.depth = FOREGROUND_DEPTH;
+                }
+            }
         });
         ogmoReader.readFile(Gdx.files.internal("levels/level-" + levelId + ".json"));
     }

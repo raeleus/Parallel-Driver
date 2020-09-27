@@ -35,10 +35,21 @@
     },
     {
       "definition": "decal",
-      "name": "decals",
+      "name": "foreground",
+      "gridSize": {"x": 8, "y": 8},
+      "exportID": "22007555",
+      "folder": "design\\output\\backgrounds",
+      "includeImageSequence": true,
+      "scaleable": false,
+      "rotatable": false,
+      "values": []
+    },
+    {
+      "definition": "decal",
+      "name": "background",
       "gridSize": {"x": 8, "y": 8},
       "exportID": "14218753",
-      "folder": "",
+      "folder": "design\\output\\backgrounds",
       "includeImageSequence": true,
       "scaleable": false,
       "rotatable": false,
