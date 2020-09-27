@@ -324,6 +324,7 @@ public class PlayerEntity extends Entity {
                     polygon2.setVertices(new float[]{wall.x + wall.bboxX, wall.y + wall.bboxY, wall.x + wall.bboxX + wall.bboxWidth, wall.y + wall.bboxY, wall.x + wall.bboxX + wall.bboxWidth, wall.y + wall.bboxY + wall.bboxHeight, wall.x + wall.bboxX, wall.bboxY + wall.bboxHeight});
                     if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
                         core.transition(new GameScreen(null, "test-level", gameScreen.currentId), new TransitionSlide(270, Interpolation.bounce), .5f);
+                        break;
                     }
                 }
             } else if (collision.other.userData instanceof ExitEntity) {
@@ -339,6 +340,7 @@ public class PlayerEntity extends Entity {
 //                        newPlayer.inputter = new NullInput();
 //                        gameScreen.addEntities.add(newPlayer);
                         core.transition(new GameScreen(null, "test-level", gameScreen.currentId + 1), new TransitionSlide(270, Interpolation.bounce), .5f);
+                        break;
                     }
                 }
             }
