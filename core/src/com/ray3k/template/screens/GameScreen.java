@@ -136,9 +136,19 @@ public class GameScreen extends JamScreen {
                             player.inputter = new PlayerInput();
                             player.inputRecorder = new InputRecorder();
                             entityController.add(player);
+                            
+                            var cameraEntity = new CameraEntity(player);
+                            entityController.add(cameraEntity);
                         }
                         break;
                 }
+            }
+            
+            @Override
+            public void level(String ogmoVersion, int width, int height, int offsetX, int offsetY,
+                              ObjectMap<String, OgmoValue> valuesMap) {
+                camera.position.set(width / 2, height / 2, 0);
+                camera.zoom = 4;
             }
         });
         ogmoReader.readFile(Gdx.files.internal("levels/" + levelName + ".json"));

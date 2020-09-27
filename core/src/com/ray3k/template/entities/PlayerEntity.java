@@ -287,8 +287,6 @@ public class PlayerEntity extends Entity {
         
         skeleton.getRootBone().setRotation(rotation);
         updateBbox();
-        
-        if (inputter instanceof PlayerInput) gameScreen.camera.position.set(x, y, 0);
     }
     
     @Override
