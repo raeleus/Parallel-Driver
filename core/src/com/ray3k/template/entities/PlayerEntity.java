@@ -326,7 +326,7 @@ public class PlayerEntity extends Entity {
         Outer:
         for (int i = 0; i < collisions.size(); i++) {
             var collision = collisions.get(0);
-            if (collision.other.userData instanceof WallEntity) {
+            if (inputter instanceof PlayerInput && collision.other.userData instanceof WallEntity) {
                 var wall = (WallEntity) collision.other.userData;
                 var bbox = (BoundingBoxAttachment) skeleton.findSlot("bbox").getAttachment();
                 var verts = Utils.boundingBoxAttachmentToTriangles(skeletonBounds, bbox);
@@ -344,7 +344,7 @@ public class PlayerEntity extends Entity {
                         break Outer;
                     }
                 }
-            } else if (collision.other.userData instanceof PlayerEntity) {
+            } else if (inputter instanceof PlayerInput && collision.other.userData instanceof PlayerEntity) {
                 var otherPlayer = (PlayerEntity) collision.other.userData;
                 var bbox = (BoundingBoxAttachment) skeleton.findSlot("bbox").getAttachment();
                 var verts = Utils.boundingBoxAttachmentToTriangles(skeletonBounds, bbox);
