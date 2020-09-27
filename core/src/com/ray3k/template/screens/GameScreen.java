@@ -6,6 +6,7 @@ import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -20,6 +21,7 @@ import com.ray3k.template.OgmoReader.*;
 import com.ray3k.template.entities.*;
 import com.ray3k.template.entities.PlayerEntity.*;
 import com.ray3k.template.screens.DialogPause.*;
+import com.ray3k.template.transitions.*;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
 import static com.ray3k.template.Core.*;
@@ -31,19 +33,20 @@ public class GameScreen extends JamScreen {
     public static ShapeDrawer shapeDrawer;
     public boolean paused;
     private ChainVfxEffect vfxEffect;
-    private String levelName;
     public Array<Entity> addEntities;
     public int currentId;
+    public int levelId;
     public Array<PlayerEntity> playerEntities = new Array<>();
     public boolean endGame = true;
+    public static final int LAST_LEVEL = 3;
     
     public GameScreen() {
-        this(null, "test-level", 0);
+        this(null, 1, 0);
     }
     
-    public GameScreen(Array<Entity> addEntities, String levelName, int currentId) {
+    public GameScreen(Array<Entity> addEntities, int levelId, int currentId) {
         this.addEntities = addEntities == null ? new Array<>() : new Array<>(addEntities);
-        this.levelName = levelName;
+        this.levelId = levelId;
         this.currentId = currentId;
     }
     
@@ -162,7 +165,7 @@ public class GameScreen extends JamScreen {
                 camera.zoom = 4;
             }
         });
-        ogmoReader.readFile(Gdx.files.internal("levels/" + levelName + ".json"));
+        ogmoReader.readFile(Gdx.files.internal("levels/level-" + levelId + ".json"));
     }
     
     @Override
@@ -183,7 +186,8 @@ public class GameScreen extends JamScreen {
             }
             
             if (nextLevel) {
-                System.out.println("done");
+                if (levelId < LAST_LEVEL) core.transition(new GameScreen(null, levelId + 1, 0), new TransitionSlide(270, Interpolation.bounce), .5f);
+                else core.transition(new CompleteScreen(), new TransitionSlide(270, Interpolation.bounce), .5f);
             }
         }
     }

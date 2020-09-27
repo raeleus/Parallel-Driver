@@ -634,7 +634,9 @@
       "nodeDisplay": 1,
       "nodeGhost": true,
       "tags": ["wall"],
-      "values": []
+      "values": [
+        {"name": "id", "definition": "Integer", "defaults": -1, "bounded": false, "min": 0, "max": 100}
+      ]
     }
   ],
   "tilesets": []

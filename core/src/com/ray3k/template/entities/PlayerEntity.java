@@ -334,7 +334,7 @@ public class PlayerEntity extends Entity {
                     if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
                         if (inputter instanceof PlayerInput) {
                             core.transition(
-                                    new GameScreen(gameScreen.addEntities, "test-level", gameScreen.currentId),
+                                    new GameScreen(gameScreen.addEntities, gameScreen.levelId, gameScreen.currentId),
                                     new TransitionSlide(270, Interpolation.bounce), .5f);
                         } else {
                             destroy = true;
@@ -357,7 +357,7 @@ public class PlayerEntity extends Entity {
                         if (Intersector.overlapConvexPolygons(polygon1, polygon2, null)) {
                             if (inputter instanceof PlayerInput) {
                                 core.transition(
-                                        new GameScreen(gameScreen.addEntities, "test-level", gameScreen.currentId),
+                                        new GameScreen(gameScreen.addEntities, gameScreen.levelId, gameScreen.currentId),
                                         new TransitionSlide(270, Interpolation.bounce), .5f);
                             } else {
                                 destroy = true;
@@ -380,7 +380,7 @@ public class PlayerEntity extends Entity {
                             newPlayer.inputter = aiInput;
                             gameScreen.addEntities.add(newPlayer);
                             core.transition(
-                                    new GameScreen(gameScreen.addEntities, "test-level", gameScreen.currentId + 1),
+                                    new GameScreen(gameScreen.addEntities, gameScreen.levelId, gameScreen.currentId + 1),
                                     new TransitionSlide(270, Interpolation.bounce), .5f);
                         } else {
                             destroy = true;
