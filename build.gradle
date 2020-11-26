@@ -96,6 +96,6 @@ project(":core") {
         api "com.badlogicgames.gdx:gdx-controllers:$gdxVersion"
         api "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
         api 'com.github.raeleus:stripe:master-SNAPSHOT'
-        implementation 'com.github.tommyettinger:jbump:659fea75c3'
+        api 'com.github.tommyettinger:jbump:659fea75c3'
     }
 }
